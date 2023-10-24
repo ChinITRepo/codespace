@@ -20,6 +20,7 @@ int main(void)
     long n3 = calculate_years(n1, n2);
 
     // Print number of years
+
     print_results(n1, n2, n3);
 }
 
