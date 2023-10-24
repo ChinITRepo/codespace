@@ -53,6 +53,7 @@ long calculate_years(long start, long end)
         long loss = start / 4;
         long start = start + (gain - loss)
     }
+    return 
 }
 
 void print_results(long start, long end, long years)
