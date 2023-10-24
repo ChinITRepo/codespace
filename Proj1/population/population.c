@@ -39,6 +39,7 @@ int get_end_size(void)
     {
         n = get_long("END size: ");
     }
-    while (n =< 9);
+    while (n =< 0);
     return n;
 }
+
