@@ -4,8 +4,9 @@
 int main(void)
 {
     //TODO: Get user input, int 1-8
-    userinput();
+    int n = userinput();
     //TODO: Define pyramid
+    pyramid_create(n);
 
     //TODO: Print pyramid
 }
