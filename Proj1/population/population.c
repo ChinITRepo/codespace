@@ -1,9 +1,12 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int get_start_size(void);
+//function starts
+long get_start_size(void);
+long get_end_size(void);
 void print_grid(int n);
 
+//main function
 int main(void)
 {
     // TODO: Prompt for start size
