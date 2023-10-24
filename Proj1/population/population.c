@@ -47,13 +47,14 @@ long get_end_size(void)
 
 long calculate_years(long start, long end)
 {
-    for (long i = start; i <= end; i++)
+    for (long i = 0; start <= end; i++)
     {
+        long 
         long gain = start / 3;
         long loss = start / 4;
-        long start = start + (gain - loss)
+        long  = start + (gain - loss)
     }
-    return 
+    return i;
 }
 
 void print_results(long start, long end, long years)
