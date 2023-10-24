@@ -10,4 +10,7 @@ int main(void)
     //TODO: Print pyramid
 }
 
-int 
+int userinput(void)
+{
+    
+}
