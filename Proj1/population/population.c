@@ -20,7 +20,7 @@ int main(void)
     long n3 = calculate_years(n1, n2)
 
     // TODO: Print number of years
-    print_results(n1, long end, long years)
+    print_results(n1, n2, n3)
 }
 
 int get_start_size(void)
