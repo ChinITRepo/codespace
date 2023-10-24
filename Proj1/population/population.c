@@ -3,7 +3,7 @@
 
 // Function prototypes
 long get_start_size(void);
-long get_end_size(void);
+long get_end_size(long start);
 long calculate_years(long start, long end);
 void print_results(long start, long end, long years);
 
