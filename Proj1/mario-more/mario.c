@@ -9,6 +9,9 @@ int main(void)
     pyramid_create(n);
 
     //TODO: Print pyramid
+    //expected: # #
+    // # #
+    //## ##
 }
 
 int userinput(void)
@@ -26,7 +29,6 @@ void pyramid_create(int size)
 {
     for (int i = 0; i < size; i++)
     {
-        if
         printf("#");
 
     }
