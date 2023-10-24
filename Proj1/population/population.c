@@ -1,6 +1,9 @@
 #include <cs50.h>
 #include <stdio.h>
 
+int get_start_size(void);
+void print_grid(int n);
+
 int main(void)
 {
     // TODO: Prompt for start size
@@ -12,4 +15,4 @@ int main(void)
     // TODO: Print number of years
 }
 
-int 
+int
