@@ -3,6 +3,11 @@
 
 int main(void)
 {
-    //TODO: Get user input
-    
+    //TODO: Get user input, int 1-8
+
+    //TODO: Define pyramid
+
+    //TODO: Print pyramid
 }
+
+int 
