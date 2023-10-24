@@ -47,6 +47,8 @@ int calculate_years(long start, long end)
 {
     for (long i = start; i != end; i++)
     {
-        
+        long gain = start / 3;
+        long loss = start / 4;
+        long net = start + (gain - loss)
     }
 }
