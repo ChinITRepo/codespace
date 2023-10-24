@@ -34,14 +34,14 @@ long get_start_size(void)
     return n;
 }
 
-long get_end_size(void)
+long get_end_size(long start)
 {
     long n;
     do
     {
         n = get_long("End size: ");
     }
-    while (n <= 0);
+    while (n <= start);
     return n;
 }
 
