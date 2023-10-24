@@ -14,7 +14,7 @@ int main(void)
     long n1 = get_start_size();
 
     // Prompt for end size
-    long n2 = get_end_size();
+    long n2 = get_end_size(n1);
 
     // Calculate number of years until we reach threshold
     long n3 = calculate_years(n1, n2);
