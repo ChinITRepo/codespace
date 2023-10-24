@@ -4,8 +4,8 @@
 //function starts
 long get_start_size(void);
 long get_end_size(void);
-long calculate_years(long start, long end)
-void print_results(long start, long end, long years)
+long calculate_years(long start, long end);
+void print_results(long start, long end, long years);
 
 //main function
 int main(void)
@@ -17,10 +17,10 @@ int main(void)
     long n2 = get_end_size();
 
     // TODO: Calculate number of years until we reach threshold
-    long n3 = calculate_years(n1, n2)
+    long n3 = calculate_years(n1, n2);
 
     // TODO: Print number of years
-    print_results(n1, n2, n3)
+    print_results(n1, n2, n3);
 }
 
 int get_start_size(void)
@@ -47,7 +47,7 @@ int get_end_size(void)
 
 int calculate_years(long start, long end)
 {
-    for (long i = start; i != end; i++)
+    for (long i = start; i =< end; i++)
     {
         long gain = start / 3;
         long loss = start / 4;
@@ -55,4 +55,7 @@ int calculate_years(long start, long end)
     }
 }
 
-void print
+void print_results(long start, long end, long years)
+{
+    printf("Start size: %li\nEnd size: %li\nYears: %li\n")
+}
