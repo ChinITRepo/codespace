@@ -60,5 +60,5 @@ long calculate_years(long start, long end)
 
 void print_results(long start, long end, long years)
 {
-    printf("Start size: %li\nEnd size: %li\nYears: %li\n", start, end, years);
+    printf("Years: %li\n", years);
 }
