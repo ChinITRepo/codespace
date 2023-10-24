@@ -4,7 +4,7 @@
 int main(void)
 {
     //TODO: Get user input, int 1-8
-
+    userinput();
     //TODO: Define pyramid
 
     //TODO: Print pyramid
@@ -12,5 +12,16 @@ int main(void)
 
 int userinput(void)
 {
-    
+    int n;
+    do
+    {
+        n = get_int("Pyramid size (1-8): ");
+    }
+    while (n > 0 || n < 9);
+    return n;
+}
+
+void pyramid_create(size)
+{
+    print
 }
