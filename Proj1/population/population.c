@@ -49,10 +49,10 @@ long calculate_years(long start, long end)
 {
     for (long i = 0; start <= end; i++)
     {
-        long 
-        long gain = start / 3;
-        long loss = start / 4;
-        long  = start + (gain - loss)
+        long count = start;
+        long gain = count / 3;
+        long loss = count / 4;
+        long count = start + (gain - loss);
     }
     return i;
 }
