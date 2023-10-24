@@ -45,5 +45,8 @@ int get_end_size(void)
 
 int calculate_years(long start, long end)
 {
-    for ()
+    for (long i = start; i != end; i++)
+    {
+        
+    }
 }
