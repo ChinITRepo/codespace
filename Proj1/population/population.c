@@ -43,3 +43,7 @@ int get_end_size(void)
     return n;
 }
 
+int calculate_years(start, end)
+{
+    
+}
