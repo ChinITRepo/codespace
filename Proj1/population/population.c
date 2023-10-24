@@ -23,8 +23,8 @@ int get_start_size(void)
     int n;
     do
     {
-        n = get_int("Start size: ");
+        n = get_long("Start size: ");
     }
-    while (n < 9);
+    while (n =< 9);
     return n;
 }
