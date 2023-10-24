@@ -23,5 +23,5 @@ int userinput(void)
 
 void pyramid_create(size)
 {
-    print
+    printf("#\n")
 }
