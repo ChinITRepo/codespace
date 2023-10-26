@@ -26,6 +26,6 @@ int scores(n)
 
 float average(n)
 {
-    
+    `
 
 }
