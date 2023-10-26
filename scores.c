@@ -2,6 +2,7 @@
 #include <cs50.h>
 
 int scores();
+float average();
 
 int main(void)
 {
