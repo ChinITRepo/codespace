@@ -6,8 +6,9 @@ float average();
 
 int main(void)
 {
+    get_int[]
     scores(3);
-    printf("Average: %f\n", ((float) scores[0] + (float) scores[1] + (float) scores[2]) / 3);
+    printf("Average: %f\n", average);
 }
 
 
