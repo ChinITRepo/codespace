@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <cs50.h>
 
-int scores(n)
+int scores();
 
 int main(void)
 {
-    scores(3)
-    printf("Average: %f\n", ((float) scores[0] + (float) scores[1] + (float) scores[2]) / (float) 3);
+    scores(3);
+    printf("Average: %f\n", ((float) scores[0] + (float) scores[1] + (float) scores[2]) / 3);
 }
 
 int scores(n)
