@@ -13,9 +13,9 @@ int main(void)
 
 
 
-int scores(n)
+int scores(int n)
 {
-    int scores[n]
+    int scores[n];
     for (int i = 0; 1 < n; i++)
     {
         do
@@ -24,8 +24,7 @@ int scores(n)
     }
 }
 
-float average(n)
+float average(int n, array scores)
 {
-    `
-
+    
 }
