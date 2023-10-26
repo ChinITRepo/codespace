@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <cs50.h>
 
 int scores();
@@ -26,5 +27,5 @@ int scores(int n)
 
 float average(int n, array scores)
 {
-    
+
 }
