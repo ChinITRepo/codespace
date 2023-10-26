@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <cs50.h>
 
+float average(int array{P})
 int main(void)
 {
     int scores[3]
