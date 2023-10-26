@@ -1,11 +1,18 @@
 #include <stdio.h>
+#include <cs50.h>
 
 int main(void)
 {
-    int scores[3]
-    int scores[0] = 72;
-    int scores[1] = 73;
-    int scores[2] = 33;
-
     printf("Average: %f\n", ((float) scores[0] + (float) scores[1] + (float) scores[2]) \ (float) 3);
+}
+
+void scores(n)
+{
+    int scores[n]
+    for (int i = 0; 1 < n; i++)
+    {
+        do
+        scores[i] = get_int("Score: ");
+        while 
+    }
 }
