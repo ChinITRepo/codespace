@@ -23,3 +23,9 @@ int scores(n)
         while (scores[i] > 1);
     }
 }
+
+float average(n)
+{
+    
+
+}
