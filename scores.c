@@ -24,9 +24,10 @@ int get_scores(int tests, int scores[])
 
 float average(int tests, int scores[])
 {
+    
     for (int i = 0; i < tests; i++)
     {
-        scores[i]
+        sum += scores[i]
     }
 
 }
