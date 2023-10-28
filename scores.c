@@ -28,8 +28,9 @@ int get_scores(int tests, int scores[])
        {
             scores[i] = get_int("Score for Test %i: ", i);
        }
+       while (!scores || scores[i] <= 0);
     }
-    while (!scores || scores[i] <= 0);
+
 
     return scores;
 }
