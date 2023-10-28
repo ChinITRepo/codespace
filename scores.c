@@ -14,11 +14,12 @@ int get_scores(int tests, int scores[])
 {
     do
     {
-        n = get_int("Amount of Tests: ");
+        tests = get_int("Amount of Tests: ");
     }
-    while (n < 1);
+    while (!tests || tests <= 1);
 
-    
+
+
 
 }
 
