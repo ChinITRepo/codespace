@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <cs50.h>
 
-float average(int array[]);
-int get_scores(int tests);
+int get_scores(int tests, int scores[]);
+float average(int tests, int scores[]);
 
 int main(void)
 {
-
+    get_scores();
+    average();
     printf("Average: %f\n", average);
 }
 
@@ -22,11 +23,11 @@ int get_scores(int tests, int scores[])
     {
        for (int i = 0; 1 < tests; i++)
        {
-            scores[i] = get_int("");
+            scores[i] = get_int("Score for Test %s: ", i);
        }
     }
     while (!scores[] || scores <= 0);
-
+    return tests;
 }
 
 float average(int tests, int scores[])
