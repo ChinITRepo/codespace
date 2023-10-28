@@ -19,6 +19,7 @@ int get_scores(int tests, int scores[])
     while (n < 1);
 
     
+
 }
 
 float average(int array[])
