@@ -18,8 +18,7 @@ int get_scores(int tests, int scores[])
     }
     while (!tests || tests <= 1);
 
-
-
+    
 
 }
 
