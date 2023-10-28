@@ -7,9 +7,11 @@ float average(int tests, int scores[]);
 int main(void)
 {
     int tests = 3;
-    get_scores(tests, scores[]);
-    average(tests, scores[]);
-    printf("Average: %f\n", average);
+    int scores[tests];
+
+    tests = get_scores(tests, scores);
+    float avg = average(tests, scores);
+    printf("Average: %f\n", avg);
 }
 
 int get_scores(int tests, int scores[])
