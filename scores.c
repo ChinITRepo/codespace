@@ -22,16 +22,16 @@ int get_scores(int tests, int scores[])
     }
     while (!tests || tests <= 1);
 
-    do
+
+    for (int i = 0; 1 < tests; i++)
     {
-       for (int i = 0; 1 < tests; i++)
-       {
+        do
+        {
             scores[i] = get_int("Score for Test %i: ", i);
-       }
-       while (!scores || scores[i] <= 0);
+        }
+        while (!scores || scores[i] <= 0);
     }
-
-
+    
     return scores;
 }
 
