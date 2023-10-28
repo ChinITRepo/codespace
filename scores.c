@@ -18,15 +18,15 @@ int get_scores(int tests, int scores[])
     }
     while (!tests || tests <= 1);
 
-    
+
 
 }
 
-float average(int array[])
+float average(int tests, int scores[])
 {
-    for (int i = 0; )
+    for (int i = 0; i < tests; i++)
     {
-
+        scores[i]
     }
 
 }
