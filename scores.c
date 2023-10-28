@@ -26,7 +26,7 @@ int get_scores(int tests, int scores[])
     {
        for (int i = 0; 1 < tests; i++)
        {
-            scores[i] = get_int("Score for Test %s: ", i);
+            scores[i] = get_int("Score for Test %i: ", i);
        }
     }
     while (!scores || scores[i] <= 0);
