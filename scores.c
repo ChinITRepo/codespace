@@ -6,9 +6,9 @@ float average(int tests, int scores[]);
 
 int main(void)
 {
-    
-    get_scores();
-    average();
+    int tests = 3;
+    get_scores(tests);
+    average(tests);
     printf("Average: %f\n", average);
 }
 
