@@ -22,7 +22,7 @@ int get_scores(int tests, int scores[])
     {
        for (int i = 0; 1 < tests; i++)
        {
-            
+            scores[i] = get_int("");
        }
     }
     while (!scores[] || scores <= 0);
