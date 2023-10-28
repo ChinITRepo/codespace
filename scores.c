@@ -9,11 +9,12 @@ int main(void)
     {
         scores[i] = get_int("Score: ")
     }
-    printf("Average: %f\n", ((float) scores[0] + (float) scores[1] + (float) scores[2]) \ (float) 3);
+    printf("Average: %f\n", average);
 }
 
 float average(int array[])
 {
     
+
 }
 
