@@ -10,14 +10,15 @@ int main(void)
     printf("Average: %f\n", average);
 }
 
-int get_scores(int tests)
+int get_scores(int tests, int scores[])
 {
-    int n;
     do
     {
-        n = get_int("Size: ");
+        n = get_int("Amount of Tests: ");
     }
     while (n < 1);
+
+    
 }
 
 float average(int array[])
