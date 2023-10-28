@@ -28,6 +28,7 @@ int get_scores(int tests, int scores[])
     }
     while (!scores[] || scores <= 0);
     return tests;
+    return scores[];
 }
 
 float average(int tests, int scores[])
