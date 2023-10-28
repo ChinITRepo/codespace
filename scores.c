@@ -29,9 +29,9 @@ int get_scores(int tests, int scores[])
             scores[i] = get_int("Score for Test %s: ", i);
        }
     }
-    while (!scores[] || scores <= 0);
-    return tests;
-    return scores[];
+    while (!scores || scores[i] <= 0);
+
+    return scores;
 }
 
 float average(int tests, int scores[])
