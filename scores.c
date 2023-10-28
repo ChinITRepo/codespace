@@ -20,9 +20,12 @@ int get_scores(int tests, int scores[])
 
     do
     {
-       for (int i = 0; 1 < tests; i++);
+       for (int i = 0; 1 < tests; i++)
+       {
+            
+       }
     }
-    while (!tests || tests <= 1);
+    while (!scores[] || scores <= 0);
 
 }
 
