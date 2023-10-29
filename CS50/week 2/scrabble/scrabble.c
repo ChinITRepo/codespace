@@ -13,24 +13,25 @@ int main(void)
 int score()
 {
     int score = 0;
-    switch(char letter) {
+    switch(char letter)
+    {
+        case 'a'  :
+        case 'e'  :
+        case 'i'  :
+        case 'l'  :
+        case 'n'  :
+        case 'o'  :
+        case 'r'  :
+        case 's'  :
+        case 't'  :
+        case 'u'  :
+            Score += 1;
+            break;
 
-    case 'a'  :
-    case 'e'  :
-    case 'i'  :
-    case 'l'  :
-    case 'n'  :
-    case 'o'  :
-    case 'r'  :
-    case 's'  :
-    case 't'  :
-    case 'u'  :
-      statement(Score += 1);
-      break;
-   case 'b'   :
-   case 'c'   :
-   
-   default : /* Optional */
+    case 'b'   :
+    case 'c'   :
+    case ''   :
+    default : /* Optional */
    statement(s);
 }
 }
