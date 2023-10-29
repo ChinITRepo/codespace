@@ -23,7 +23,7 @@ int get_scores(int length, int scores[])
     while (!length || length <= 1);
 
 
-    for (int i = 0; 1 < length; i++)
+    for (int i = 0; i < length; i++)
     {
         do
         {
