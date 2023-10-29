@@ -17,13 +17,6 @@ int main(void)
 
 int get_scores(int length, int scores[])
 {
-    do
-    {
-        length = get_int("Amount of length: ");
-    }
-    while (!length || length <= 1);
-
-
     for (int i = 0; i < length; i++)
     {
         do
@@ -33,7 +26,7 @@ int get_scores(int length, int scores[])
         while (!scores || scores[i] <= 0);
     }
 
-    return *scores;
+    return scores;
 }
 
 float average(int length, int scores[])
