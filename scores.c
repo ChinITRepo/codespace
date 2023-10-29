@@ -33,7 +33,7 @@ int get_scores(int length, int scores[])
         while (!scores || scores[i] <= 0);
     }
 
-    return scores;
+    return *scores;
 }
 
 float average(int length, int scores[])
