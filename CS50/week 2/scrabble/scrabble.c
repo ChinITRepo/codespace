@@ -6,10 +6,19 @@ int main(void)
 {
     string p1 = get_string("player 1: ");
     string p2 = get_string("Player 2: ");
-    if ()
-    {
-        
-    }
+    switch(expression) {
+
+    case constant-expression  :
+      statement(s);
+      break; /* optional */
+
+    case constant-expression  :
+      statement(s);
+      break; /* optional */
+
+   default : /* Optional */
+   statement(s);
+}
 }
 
 int score(int argc, string argv[])
