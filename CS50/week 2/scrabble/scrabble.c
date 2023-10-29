@@ -16,14 +16,12 @@ int score()
     switch(char letter) {
 
    case 'a'  :
+   case 'e'  :
+   case ''   :
+   case ''   :
       statement(Score += 1);
       break; /* optional */
 
-   case 'b'  :
-      statement(s);
-      break; /* optional */
-
-   /* you can have any number of case statements */
    default : /* Optional */
    statement(s);
 }
