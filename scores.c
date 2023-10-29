@@ -10,7 +10,14 @@ int main(void)
 {
     int scores[n];
 
-    length = get_scores(n, scores);
+    for (int i = 0; i < length; i++)
+    {
+        do
+        {
+            scores[i] = get_int("Score for Test %i: ", i);
+        }
+        while (scores[i] <= 0);
+    }
     float avg = average(n, scores);
     printf("Average: %f\n", avg);
 }
