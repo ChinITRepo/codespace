@@ -10,7 +10,10 @@ int main(void)
 
 int score(int argc, string argv[])
 {
-    
+    for ()
+    {
+        
+    }
 }
 
 void winner(int scores[])
