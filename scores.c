@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <cs50.h>
 
-int get_scores(int length, int scores[]);
 float average(int length, int scores[]);
 
 int n = 3;
@@ -29,5 +28,6 @@ float average(int length, int scores[])
     {
         sum += scores[i];
     }
-    return float average = sum / (float) length;
+    float average = sum / (float) length;
+    return average;
 }
