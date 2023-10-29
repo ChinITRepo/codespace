@@ -4,10 +4,12 @@
 
 int main(void)
 {
-    int scores[2];
     string p1 = get_string("player 1: ");
     string p2 = get_string("Player 2: ");
-    scores[2] += score(p1);
+    if ()
+    {
+        
+    }
 }
 
 int score(int argc, string argv[])
