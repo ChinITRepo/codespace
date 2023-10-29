@@ -10,7 +10,7 @@ int main(void)
 {
     int scores[n];
 
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < n; i++)
     {
         do
         {
@@ -20,20 +20,6 @@ int main(void)
     }
     float avg = average(n, scores);
     printf("Average: %f\n", avg);
-}
-
-int get_scores(int length, int scores[])
-{
-    for (int i = 0; i < length; i++)
-    {
-        do
-        {
-            scores[i] = get_int("Score for Test %i: ", i);
-        }
-        while (scores[i] <= 0);
-    }
-
-    return scores;
 }
 
 float average(int length, int scores[])
