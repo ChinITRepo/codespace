@@ -4,14 +4,14 @@
 int get_scores(int length, int scores[]);
 float average(int length, int scores[]);
 
-int length = 3;
+int n = 3;
 
 int main(void)
 {
-    int scores[length];
+    int scores[n];
 
-    length = get_scores(length, scores);
-    float avg = average(length, scores);
+    length = get_scores(n, scores);
+    float avg = average(n, scores);
     printf("Average: %f\n", avg);
 }
 
@@ -23,7 +23,7 @@ int get_scores(int length, int scores[])
         {
             scores[i] = get_int("Score for Test %i: ", i);
         }
-        while (!scores || scores[i] <= 0);
+        while (scores[i] <= 0);
     }
 
     return scores;
