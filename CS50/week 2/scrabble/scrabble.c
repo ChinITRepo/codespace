@@ -6,6 +6,12 @@ int main(void)
 {
     string p1 = get_string("player 1: ");
     string p2 = get_string("Player 2: ");
+
+    printf("")
+}
+
+int score()
+{
     
 }
 
