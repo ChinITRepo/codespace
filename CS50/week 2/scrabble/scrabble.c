@@ -3,11 +3,10 @@
 
 int main(void)
 {
+    int scores[2];
     string p1 = get_string("player 1: ");
     string p2 = get_string("Player 2: ");
-
-
-
+    scores[2] += score(p1);
 }
 
 int score(int argc, string argv[])
@@ -15,7 +14,7 @@ int score(int argc, string argv[])
 
 }
 
-
+void winner(int scores[])
 
 //1	3	3	2	1	4	2	4	1	8	5	1	3	1	1	3	10	1	1	1	1	4	4	8	4	10
 //For example, if we wanted to score the word “CODE”, we would note that the ‘C’ is worth 3 points, the ‘O’ is worth 1 point, the ‘D’ is worth 2 points, and the ‘E’ is worth 1 point. Summing these, we get that “CODE” is worth 7 points.
