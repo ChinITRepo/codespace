@@ -12,7 +12,21 @@ int main(void)
 
 int score()
 {
-    
+    int score = 0;
+    switch(char letter) {
+
+   case 'a'  :
+      statement(Score += 1);
+      break; /* optional */
+
+   case 'b'  :
+      statement(s);
+      break; /* optional */
+
+   /* you can have any number of case statements */
+   default : /* Optional */
+   statement(s);
+}
 }
 
 
