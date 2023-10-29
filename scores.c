@@ -1,29 +1,29 @@
 #include <stdio.h>
 #include <cs50.h>
 
-int get_scores(int tests, int scores[]);
-float average(int tests, int scores[]);
+int get_scores(int length, int scores[]);
+float average(int length, int scores[]);
 
 int main(void)
 {
-    int tests = 3;
-    int scores[tests];
+    int length = 3;
+    int scores[length];
 
-    tests = get_scores(tests, scores);
-    float avg = average(tests, scores);
+    length = get_scores(length, scores);
+    float avg = average(length, scores);
     printf("Average: %f\n", avg);
 }
 
-int get_scores(int tests, int scores[])
+int get_scores(int length, int scores[])
 {
     do
     {
-        tests = get_int("Amount of Tests: ");
+        length = get_int("Amount of length: ");
     }
-    while (!tests || tests <= 1);
+    while (!length || length <= 1);
 
 
-    for (int i = 0; 1 < tests; i++)
+    for (int i = 0; 1 < length; i++)
     {
         do
         {
@@ -31,17 +31,16 @@ int get_scores(int tests, int scores[])
         }
         while (!scores || scores[i] <= 0);
     }
-    
+
     return scores;
 }
 
-float average(int tests, int scores[])
+float average(int length, int scores[])
 {
-    int sum;
-    for (int i = 0; i < tests; i++)
+    int sum = 0;
+    for (int i = 0; i < length; i++)
     {
-        sum += scores[i]
+        sum += scores[i];
     }
-    float average = sum / tests;
-    return average;
+    return float average = sum / (float) length;
 }

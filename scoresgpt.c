@@ -14,7 +14,7 @@ int main(void)
 }
 
 // Function to get scores
-int* scores(int n)
+int* scores(int length)
 {
     // Dynamically allocate memory for scores
     int *scores = malloc(n * sizeof(int));
@@ -29,7 +29,7 @@ int* scores(int n)
 }
 
 // Function to calculate average
-float average(int n, int scores[])
+float average(int length, int scores[])
 {
     float sum = 0;
     for (int i = 0; i < n; i++)
