@@ -4,9 +4,10 @@
 int get_scores(int length, int scores[]);
 float average(int length, int scores[]);
 
+int length = 3;
+
 int main(void)
 {
-    int length = 3;
     int scores[length];
 
     length = get_scores(length, scores);
