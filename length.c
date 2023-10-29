@@ -18,5 +18,5 @@ void get_length(string input)
         length++;
     }
     while (input[length] != 0);
-    printf("%s is %i characters!", input, length);
+    printf("%s is %i characters!\n", input, length);
 }
