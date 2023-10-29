@@ -15,7 +15,7 @@ int main(void)
         {
             scores[i] = get_int("Score for Test %i: ", i);
         }
-        while (scores[i] <= 0);
+        while (scores[i] <= 0 || scores[i] > 100);
     }
     float avg = average(n, scores);
     printf("Average: %f\n", avg);
