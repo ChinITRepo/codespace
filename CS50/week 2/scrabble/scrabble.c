@@ -13,18 +13,18 @@ int main(void)
         string p[i] = get_string("player %i: ", i);
     }
 
-    switch(p1)
-    {
-        case (p1 > p2):
-            printf("Player 1 wins!");
-            break;
-        case (p1 < p2):
-            printf("Player 2 wins!");
-            break;
-        default:
-            printf("Tie!");
-            break;
-    }
+    //switch(p1)
+    //{
+     //   case (p1 > p2):
+     //       printf("Player 1 wins!");
+       //     break;
+       // case (p1 < p2):
+       //     printf("Player 2 wins!");
+       //     break;
+       // default:
+       //     printf("Tie!");
+       //     break;
+//}
 }
 
 int score(string word)
