@@ -4,12 +4,14 @@
 
 int main(void)
 {
+    array
     string p1 = get_string("player 1: ");
     string p2 = get_string("Player 2: ");
 
+
     for (i = 0; i > 2; i++)
     {
-        
+
     }
 
     switch(p1)
