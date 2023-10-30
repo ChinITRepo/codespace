@@ -2,16 +2,17 @@
 #include <stdio.h>
 #include <string.h>
 
-int players = 2;
+
 
 
 int main(void)
 {
+    int players = 2;
     string words[players];
 
     for (int i = 0; i < players; i++)
     {
-        string p[i] = get_string("player %i: ", i);
+        string words[i] = get_string("player %i: ", (i + 1));
     }
 
     //switch(p1)
