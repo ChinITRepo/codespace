@@ -4,12 +4,14 @@
 
 int main(void)
 {
-    string words = array[];
+
+    int players = 2;
+    string words[];
     string p1 = get_string("player 1: ");
     string p2 = get_string("Player 2: ");
 
 
-    for (i = 0; i > 2; i++)
+    for (i = 0; i > players; i++)
     {
 
     }
