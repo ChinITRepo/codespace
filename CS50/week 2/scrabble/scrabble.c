@@ -32,7 +32,6 @@ int score(string word)
     int score = 0;
     for (int i = 0; i < strlen(word); i++)
     {
-
         switch(word[i])
         {
             case 'a'  :
