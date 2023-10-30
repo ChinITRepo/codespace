@@ -10,7 +10,7 @@ int main(void)
     for (int i = 0; i < players; i++)
     {
         printf("player %i: ", i + 1);
-        string words[i] = get_string("");
+        words[i] = get_string("");
     }
 
     //switch(p1)
