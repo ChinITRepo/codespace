@@ -4,12 +4,14 @@
 
 int players = 2;
 
+
 int main(void)
 {
-    string words[];
+    string words[players];
 
-    for (i = 0; i < players; i++)
+    for (int i = 0; i < players; i++)
     {
+        string p[players];
         string p[i] = get_string("player %i: ", i);
     }
 
