@@ -76,8 +76,8 @@ int score(string word)
                 score += 10;
                 break;
         }
-    return score;
     }
+    return score;
 }
 
 
