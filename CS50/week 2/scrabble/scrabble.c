@@ -1,6 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
-#include <strings.h>
+#include <string.h>
 
 int main(void)
 {
@@ -10,12 +10,12 @@ int main(void)
     printf("")
 }
 
-int score(string word[])
+int score(string word)
 {
     int score = 0;
-    for ()
+    for (int i = 0; i < strlen(word))
     {
-        switch(char letter)
+        switch(char lett er)
         {
             case 'a'  :
             case 'e'  :
