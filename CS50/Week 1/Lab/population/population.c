@@ -20,12 +20,13 @@ int main(void)
     long n3 = calculate_years(n1, n2);
 
     // Print number of years
-
     print_results(n1, n2, n3);
 }
 
+// Function for start size
 long get_start_size(void)
 {
+    // initilize variable
     long n;
     do
     {
