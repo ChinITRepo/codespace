@@ -6,16 +6,27 @@ int main(void)
 {
     string p1 = get_string("player 1: ");
     string p2 = get_string("Player 2: ");
-
-    printf("")
+    switch(p1)
+    {
+        case (p1 > p2):
+            printf("Player 1 wins!")
+            break;
+        case (p1 < p2):
+            printf("Player 2 wins!")
+            break;
+        default:
+            printf("Tie!")
+            break;
+    }
 }
 
 int score(string word)
 {
     int score = 0;
-    for (int i = 0; i < strlen(word))
+    for (int i = 0; i < strlen(word); i++)
     {
-        switch(char lett er)
+
+        switch(char word[i])
         {
             case 'a'  :
             case 'e'  :
