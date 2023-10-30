@@ -12,7 +12,8 @@ int main(void)
 
     for (int i = 0; i < players; i++)
     {
-        string words[i] = get_string("player %i: ", (i + 1));
+        printf("player %i: ", i + 1);
+        string words[i] = get_string("");
     }
 
     //switch(p1)
