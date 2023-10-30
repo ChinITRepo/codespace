@@ -11,7 +11,6 @@ int main(void)
 
     for (int i = 0; i < players; i++)
     {
-        string p[players];
         string p[i] = get_string("player %i: ", i);
     }
 
