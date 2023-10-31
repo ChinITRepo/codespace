@@ -4,7 +4,7 @@
 
 typedef struct
 {
-    int playernumber;
+    int player_number;
     string word;
 }
 player;
@@ -22,8 +22,6 @@ int main(void)
         printf("player %i: ", i + 1);
         words[i] = get_string("");
     }
-
-    printf("%s %s %lu %lu\n", words[0], words[1], strlen(words[0]), strlen(words[1]));
 
     /*for (int i = 0; i < players; i++)
     {
