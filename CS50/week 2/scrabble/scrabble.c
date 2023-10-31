@@ -5,7 +5,7 @@
 typedef struct
 {
     int playernumber;
-    
+
 
 }
 
@@ -23,9 +23,11 @@ int main(void)
         words[i] = get_string("");
     }
 
-    printf("%s %s", words[0], words[1]);
+    printf("%s %s\n", words[0], words[1]);
 
-    for (int i = 0; i < players; i++)
+    printf("")
+
+    /*for (int i = 0; i < players; i++)
     {
         scores[i] += calc_score(words[i]);
     }
@@ -42,7 +44,7 @@ int main(void)
     else
     {
         printf("Tie!\n");
-    }
+    } */
 }
 
 int calc_score(string word)
