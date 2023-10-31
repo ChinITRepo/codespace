@@ -18,7 +18,7 @@ int main(void)
 
     for (int i = 0; i < players; i++)
     {
-        scores += calc_score(words[i]);
+        scores[i] += calc_score(words[i]);
     }
 
     switch(scores[])
