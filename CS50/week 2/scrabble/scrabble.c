@@ -23,7 +23,7 @@ int main(void)
         words[i] = get_string("");
     }
 
-    printf("%s %s %c %c\n", words[0], words[1], );
+    printf("%s %s %i %i\n", words[0], words[1], strlen(words[0]), strlen(words[1]));
 
     /*for (int i = 0; i < players; i++)
     {
@@ -50,7 +50,7 @@ int calc_score(string word)
     int score = 0;
     for (int i = 0; i < strlen(word); i++)
     {
-        switch(word[i])
+        switch(word[i][i])
         {
             case 'a'  :
             case 'e'  :
