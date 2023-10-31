@@ -16,7 +16,8 @@ int main(void)
     int players = 2;
     string words[players];
     int scores[players];
-    
+
+    scores[] = {0, 0};
 
     for (int i = 0; i < players; i++)
     {
