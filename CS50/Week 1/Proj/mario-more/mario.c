@@ -27,31 +27,8 @@ int userinput(void)
 
 void pyramid_create(int size)
 {
-    // Loop through each level of the pyramid
-    for (int i = 1; i <= size; i++)
+    for (int i = 0; i < size; i++)
     {
-        // Print spaces before #
-        for (int j = 0; j < size - i; j++)
-        {
-            printf(" ");
-        }
 
-        // Print # for the left pyramid
-        for (int j = 0; j < i; j++)
-        {
-            printf("#");
-        }
-
-        // Print two spaces in the middle
-        printf("  ");
-
-        // Print # for the right pyramid
-        for (int j = 0; j < i; j++)
-        {
-            printf("#");
-        }
-
-        // Move to the next line
-        printf("\n");
     }
 }
