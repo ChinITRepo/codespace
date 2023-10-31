@@ -49,10 +49,9 @@ int calc_score(string word)
 
     for (int i = 0; i < (int) strlen(word); i++)
     {
-        char letter = word[i];
-        printf("%c", letter);
+        printf("%c\n", word[i]);
 
-        switch(letter)
+        switch(word[i])
         {
             case 'a'  :
             case 'e'  :
