@@ -15,23 +15,26 @@ int main(void)
         printf("player %i: ", i + 1);
         words[i] = get_string("");
     }
+    
+    printf("%s %s", words[0] words[1]);
 
     for (int i = 0; i < players; i++)
     {
         scores[i] += calc_score(words[i]);
     }
 
-    switch(scores[])
+    if (scores[0] > scores[1])
     {
-        case (scores[0] > scores[1]):
-            printf("Player 1 wins!");
-            break;
-        case (scores[0] < scores[1]):
-            printf("Player 2 wins!");
-            break;
-        default:
-            printf("Tie!");
-            break;
+        printf(scores[0])
+        printf("Player 1 wins!\n");
+    }
+    else if (scores[0] < scores[1])
+    {
+        printf("Player 2 wins!\n");
+    }
+    else
+    {
+        printf("Tie!\n");
     }
 }
 
