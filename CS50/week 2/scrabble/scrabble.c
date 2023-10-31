@@ -2,9 +2,10 @@
 #include <stdio.h>
 #include <string.h>
 
-typedef strut
+typedef struct
 {
     int playernumber;
+    
 
 }
 
