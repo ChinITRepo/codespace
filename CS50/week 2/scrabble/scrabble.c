@@ -35,7 +35,7 @@ int main(void)
     }
 }
 
-int calcscore(string word)
+int calc_score(string word)
 {
     int score = 0;
     for (int i = 0; i < strlen(word); i++)
