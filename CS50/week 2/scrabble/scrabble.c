@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
+int calc_score(string word);
+
 int main(void)
 {
     int players = 2;
@@ -16,15 +18,16 @@ int main(void)
 
     for (int i = 0; i < players; i++)
     {
-        
+        scores += calc_score(words[i]);
     }
 
-    switch(p1)
+
+    switch(scores[])
     {
-        case (p1 > p2):
+        case (scores[0] > scores[1]):
             printf("Player 1 wins!");
             break;
-        case (p1 < p2):
+        case (scores):
             printf("Player 2 wins!");
             break;
         default:
