@@ -8,7 +8,7 @@ int main(void)
 {
     int players = 2;
     string words[players];
-    int scores[];
+    int scores[players];
 
     for (int i = 0; i < players; i++)
     {
@@ -21,13 +21,12 @@ int main(void)
         scores += calc_score(words[i]);
     }
 
-
     switch(scores[])
     {
         case (scores[0] > scores[1]):
             printf("Player 1 wins!");
             break;
-        case (scores):
+        case (scores[0] < scores[1]):
             printf("Player 2 wins!");
             break;
         default:
