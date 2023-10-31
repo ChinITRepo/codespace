@@ -50,7 +50,8 @@ int calc_score(string word)
 
     for (int i = 0; i < (int) strlen(word); i++)
     {
-        char letter = word[i]
+        char letter = word[i];
+        printf("%c", letter);
 
         switch(letter)
         {
