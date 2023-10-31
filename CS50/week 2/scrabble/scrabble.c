@@ -23,7 +23,7 @@ int main(void)
         words[i] = get_string("");
     }
 
-    /*for (int i = 0; i < players; i++)
+    for (int i = 0; i < players; i++)
     {
         scores[i] += calc_score(words[i]);
     }
@@ -40,7 +40,7 @@ int main(void)
     else
     {
         printf("Tie!\n");
-    } */
+    }
 }
 
 int calc_score(string word)
