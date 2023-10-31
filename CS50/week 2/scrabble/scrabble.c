@@ -5,8 +5,7 @@
 typedef struct
 {
     int playernumber;
-
-
+    string 
 }
 
 int calc_score(string word);
