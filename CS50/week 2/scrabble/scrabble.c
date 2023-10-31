@@ -6,6 +6,7 @@ int main(void)
 {
     int players = 2;
     string words[players];
+    int scores[];
 
     for (int i = 0; i < players; i++)
     {
@@ -13,21 +14,26 @@ int main(void)
         words[i] = get_string("");
     }
 
-    //switch(p1)
-    //{
-     //   case (p1 > p2):
-     //       printf("Player 1 wins!");
-       //     break;
-       // case (p1 < p2):
-       //     printf("Player 2 wins!");
-       //     break;
-       // default:
-       //     printf("Tie!");
-       //     break;
-//}
+    for (int i = 0; i < players; i++)
+    {
+        
+    }
+
+    switch(p1)
+    {
+        case (p1 > p2):
+            printf("Player 1 wins!");
+            break;
+        case (p1 < p2):
+            printf("Player 2 wins!");
+            break;
+        default:
+            printf("Tie!");
+            break;
+    }
 }
 
-int score(string word)
+int calcscore(string word)
 {
     int score = 0;
     for (int i = 0; i < strlen(word); i++)
