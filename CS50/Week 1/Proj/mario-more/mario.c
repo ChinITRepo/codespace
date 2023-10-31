@@ -29,7 +29,7 @@ void pyramid_create(int size)
 {
     for (int i = 0; i < size; i++)
     {
-        for (int j = 0; j < size - 1)
+        for (int j = 0; j < size - 1; i++)
         {
             printf(" ");
         }
