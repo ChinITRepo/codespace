@@ -47,10 +47,10 @@ int main(void)
 int calc_score(string word)
 {
     int score = 0;
-    
-    for (int i = 0; i < strlen(word); i++)
+
+    for (int i = 0; i < (int) strlen(word); i++)
     {
-        switch(word[0])
+        switch(word[i])
         {
             case 'a'  :
             case 'e'  :
@@ -76,19 +76,23 @@ int calc_score(string word)
             case 'p'   :
                 score += 3;
                 break;
+
             case 'h'   :
             case 'v'   :
             case 'w'   :
             case 'y'   :
                 score +=4 ;
                 break;
+
             case 'k'   :
                 score += 5;
                 break;
+
             case 'j' :
             case 'x' :
                 score += 8;
                 break;
+
             case 'q' :
             case 'z' :
                 score += 10;
