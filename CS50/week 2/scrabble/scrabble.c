@@ -17,8 +17,6 @@ int main(void)
     string words[players];
     int scores[players];
 
-    scores[] = {0, 0};
-
     for (int i = 0; i < players; i++)
     {
         printf("player %i: ", i + 1);
