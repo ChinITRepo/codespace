@@ -23,7 +23,7 @@ int main(void)
         words[i] = get_string("");
     }
 
-    printf("%s %s %i %i\n", words[0], words[1], strlen(words[0]), strlen(words[1]));
+    printf("%s %s %lu %lu\n", words[0], words[1], strlen(words[0]), strlen(words[1]));
 
     /*for (int i = 0; i < players; i++)
     {
