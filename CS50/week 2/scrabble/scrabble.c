@@ -9,7 +9,7 @@ typedef struct
 }
 player;
 
-//int calc_score(string word);
+int calc_score(string word);
 
 int main(void)
 {
