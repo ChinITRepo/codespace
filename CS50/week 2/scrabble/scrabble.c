@@ -48,9 +48,9 @@ int main(void)
 int calc_score(string word)
 {
     int score = 0;
-    for (int i = 0; i < (int) strlen(word); i++)
+    for (int i = 0; i < strlen(word); i++)
     {
-        switch(word[0][i])
+        switch(word[0])
         {
             case 'a'  :
             case 'e'  :
