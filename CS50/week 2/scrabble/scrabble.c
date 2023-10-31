@@ -26,7 +26,7 @@ int main(void)
     for (int i = 0; i < players; i++)
     {
         scores[i] += calc_score(words[i]);
-        printf("score: %i\n", );
+        printf("score: %i\n", scores[i]);
     }
 
     if (scores[0] > scores[1])
