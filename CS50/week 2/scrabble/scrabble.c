@@ -50,8 +50,7 @@ int calc_score(string word)
     int score = 0;
     for (int i = 0; i < (int) strlen(word); i++)
     {
-        string 
-        switch()
+        switch(word[0][i])
         {
             case 'a'  :
             case 'e'  :
