@@ -2,10 +2,10 @@
 #include <stdio.h>
 #include <string.h>
 
-typedef player strut
+typedef strut
 {
     int playernumber;
-    
+
 }
 
 int calc_score(string word);
