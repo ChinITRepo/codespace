@@ -15,8 +15,8 @@ int main(void)
         printf("player %i: ", i + 1);
         words[i] = get_string("");
     }
-    
-    printf("%s %s", words[0] words[1]);
+
+    printf("%s %s", words[0], words[1]);
 
     for (int i = 0; i < players; i++)
     {
