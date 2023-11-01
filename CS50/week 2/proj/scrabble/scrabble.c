@@ -15,25 +15,25 @@ int calc_score(string word);
 int main(void)
 {
     int players = 2;
-    player playerarray[players]
+    player playerarray[players];
 
     for (int i = 0; i < players; i++)
     {
         playerarray[i].player_number = i + 1;
-        playerarray[i].word = get_string("player %i: ", player[i].player_number);
+        playerarray[i].word = get_string("player %i: ", playerarray[i].player_number);
     }
 
     for (int i = 0; i < players; i++)
     {
-        player[i].score = 0;
-        player[i].score += calc_score(player[i].words);
+        playerarray[i].score = 0;
+        playerarray[i].score += calc_score(playerarray[i].word);
     }
 
-    if (player[0].score > player[1].score)
+    if (playerarray[0].score > playerarray[1].score)
     {
-        printf("Player 1 wins!\n");
+        printf("player 1 wins!\n");
     }
-    else if (splayer[0].score > player[1].score)
+    else if (playerarray[0].score > playerarray[1].score)
     {
         printf("Player 2 wins!\n");
     }
