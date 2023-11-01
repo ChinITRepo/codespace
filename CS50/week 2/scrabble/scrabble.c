@@ -19,8 +19,8 @@ int main(void)
 
     for (int i = 0; i < players; i++)
     {
-        player[i].player_number = ;
-        player[i].word = get_string("player %i: ", i + 1);
+        player[i].player_number = i + 1;
+        player[i].word = get_string("player %i: ", player[i].player_number);
     }
 
     for (int i = 0; i < players; i++)
