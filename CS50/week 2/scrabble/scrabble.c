@@ -26,12 +26,10 @@ int main(void)
     {
         scores[i] = 0;
 
-        printf("score: %i\n", scores[i]);
         scores[i] += calc_score(words[i]);
-        printf("score: %i\n", scores[i]);
     }
 
-   /* if (scores[0] > scores[1])
+    if (scores[0] > scores[1])
     {
         printf(scores[0])
         printf("Player 1 wins!\n");
@@ -43,7 +41,7 @@ int main(void)
     else
     {
         printf("Tie!\n");
-    }*/
+    }
 }
 
 int calc_score(string word)
