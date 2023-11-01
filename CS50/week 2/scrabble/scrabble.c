@@ -31,7 +31,6 @@ int main(void)
 
     if (scores[0] > scores[1])
     {
-        printf(scores[0])
         printf("Player 1 wins!\n");
     }
     else if (scores[0] < scores[1])
