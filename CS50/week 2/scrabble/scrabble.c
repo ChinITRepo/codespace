@@ -17,6 +17,8 @@ int main(void)
     string words[players];
     int scores[players];
 
+    scores[players] = {0,0};
+
     for (int i = 0; i < players; i++)
     {
         words[i] = get_string("player %i: ", i + 1);
@@ -24,6 +26,7 @@ int main(void)
 
     for (int i = 0; i < players; i++)
     {
+        printf("score: %i\n", scores[i]);
         scores[i] += (int) calc_score(words[i]);
         printf("score: %i\n", scores[i]);
     }
