@@ -15,8 +15,6 @@ int calc_score(string word);
 int main(void)
 {
     int players = 2;
-    string words[players];
-    int scores[players];
 
     for (int i = 0; i < players; i++)
     {
