@@ -26,16 +26,15 @@ int main(void)
 
     for (int i = 0; i < players; i++)
     {
-        player[i]. = 0;
-
-        scores[i] += calc_score(words[i]);
+        player[i].score = 0;
+        player[i].score += calc_score(player[i].words);
     }
 
-    if (scores[0] > scores[1])
+    if (player[0].score > player[1].score)
     {
         printf("Player 1 wins!\n");
     }
-    else if (scores[0] < scores[1])
+    else if (splayer[0].score > player[1].score)
     {
         printf("Player 2 wins!\n");
     }
