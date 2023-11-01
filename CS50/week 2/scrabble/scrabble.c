@@ -49,8 +49,6 @@ int calc_score(string word)
 
     for (int i = 0; i < (int) strlen(word); i++)
     {
-        printf("%c\n", word[i]);
-
         switch(word[i])
         {
             case 'a'  :
