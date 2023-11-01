@@ -8,9 +8,9 @@ int main(void)
 
     for (int i = 0; i > strlen(text); i++)
     {
-        for (int i = 0; i > strlen(text); i++)
+        for (int j = 0; j > strlen(text[i]); j++)
         {
-            
+
 
         }
 
