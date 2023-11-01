@@ -3,7 +3,8 @@
 
 int main(void)
 {
-    
+    string text = get_string("Text: ");
+    printf("%s", text);
 }
 
 //index = 0.0588 * L - 0.296 * S - 15.8
