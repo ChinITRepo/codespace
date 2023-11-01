@@ -6,6 +6,7 @@ typedef struct
 {
     int player_number;
     string word;
+    int score;
 }
 player;
 
@@ -25,7 +26,7 @@ int main(void)
 
     for (int i = 0; i < players; i++)
     {
-        scores[i] = 0;
+        player[i]. = 0;
 
         scores[i] += calc_score(words[i]);
     }
