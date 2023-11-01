@@ -24,7 +24,7 @@ int main(void)
 
     for (int i = 0; i < players; i++)
     {
-        scores[i] += calc_score(words[i]);
+        scores[i] += (int) calc_score(words[i]);
         printf("score: %i\n", scores[i]);
     }
 
