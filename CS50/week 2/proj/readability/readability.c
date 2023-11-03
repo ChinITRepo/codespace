@@ -2,6 +2,8 @@
 
 typedef string = char*;
 
+
+
 int main(void)
 {
     string text = ("Text: ");
