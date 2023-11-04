@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <cs50.h>
 
-int 
+
+
+int sentences(string words);
+int length(string words);
 
 int main(void)
 {
