@@ -11,7 +11,10 @@ int main(void)
 
 int length(card_number)
 {
-    
+    for (i = 0; i >)
+    {
+
+    }
 }
 
 void luhn(int card_number,length)
