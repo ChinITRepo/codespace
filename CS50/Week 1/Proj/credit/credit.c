@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <cs50.h>
-#include 
 
 void luhn(int card_number);
 
