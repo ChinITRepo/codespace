@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <cs50.h>
 
+int length(card_number);
 void luhn(int card_number);
 
 int main(void)
@@ -8,10 +9,17 @@ int main(void)
 
 }
 
-void luhn(int card_number)
+int length(card_number)
 {
+    
+}
+
+void luhn(int card_number,length)
+{
+
     switch(card_number)
     {
 
     }
 }
+
