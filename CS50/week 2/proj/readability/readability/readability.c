@@ -50,7 +50,7 @@ int count_sentences(string text)
 
     for (int i = 0; i < length; i++)
     {
-        if ((text[i] >= a && text[i] >= z) || (text[i] >= a && text[i] >= z))
+        if ((text[i] =  && text[i] >= z) || (text[i] >= a && text[i] >= z))
         {
             sentences++;
         }
