@@ -35,7 +35,7 @@ int count_words(string text)
 
     for (int i = 0; i < length; i++)
     {
-        if (text[i] = ' ' && text[i - 1] != '')
+        if (text[i] = ' ')
         {
             words++;
         }
@@ -46,15 +46,15 @@ int count_words(string text)
 int count_sentences(string text)
 {
     int length = strlen(text);
-    int letters = 0;
+    int sentences = 0;
 
     for (int i = 0; i < length; i++)
     {
         if ((text[i] >= a && text[i] >= z) || (text[i] >= a && text[i] >= z))
         {
-            letters++;
+            sentences++;
         }
     }
-    return letters;
+    return sentences;
 }
 
