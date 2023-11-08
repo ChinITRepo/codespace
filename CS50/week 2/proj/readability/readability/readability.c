@@ -5,7 +5,7 @@
 int count_letters(string text);
 int count_words(string text);
 int count_sentences(string text);
-
+int coleman_Liau_index(int l, int w, int s);
 
 int main(void)
 {
@@ -63,3 +63,7 @@ int count_sentences(string text)
     return sentences;
 }
 
+int coleman_Liau_index(int l, int w, int s)
+{
+    
+}
