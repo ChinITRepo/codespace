@@ -65,8 +65,9 @@ int count_sentences(string text)
 
 int coleman_Liau_index(int l, int w, int s)
 {
-    int average_letters = l \ 100;
-    int average_sentences = s \ 100;
-    return int index = 0.0588 * average_letters - 0.296 * average_sentences - 15.8;
+    int average_letters = (l \ 100);
+    int average_sentences = (s \ 100);
+    int index = (0.0588 * average_letters - 0.296) * average_sentences - 15.8;
 
+    return index;
 }
