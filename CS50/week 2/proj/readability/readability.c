@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <cs50.h>
+#include <string.h>
 
 
 int main(void)
@@ -11,4 +12,4 @@ int main(void)
 //index = 0.0588 * L - 0.296 * S - 15.8
 
 
-int 
+int
