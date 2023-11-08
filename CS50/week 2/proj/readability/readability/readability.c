@@ -12,7 +12,7 @@ int main(void)
     int letters = count_letters(text);
     int words = count_words(text);
     int sentences = count_sentences(text);
-    printf("letters:%i\nWords:%i\nSentences:%i", letters, words, sentences)
+    printf("letters:%i\nWords:%i\nSentences:%i", letters, words, sentences);
 }
 
 int count_letters(string text)
@@ -22,7 +22,7 @@ int count_letters(string text)
 
     for (int i = 0; i < length; i++)
     {
-        if ((text[i] >= a && text[i] >= z) || (text[i] >= a && text[i] >= z))
+        if ((text[i] >= 'a' && text[i] >= 'z') || (text[i] >= 'A' && text[i] >= 'Z'))
         {
             letters++;
         }
@@ -37,7 +37,7 @@ int count_words(string text)
 
     for (int i = 0; i < length; i++)
     {
-        if (text[i] = ' ')
+        if (text[i] == ' ')
         {
             words++;
         }
@@ -52,7 +52,7 @@ int count_sentences(string text)
 
     for (int i = 0; i < length; i++)
     {
-        if (text[i] = '.' || text[i] = '?' || text[i] = '!' )
+        if (text[i] == '.' || text[i] == '?' || text[i] == '!' )
         {
             sentences++;
         }
