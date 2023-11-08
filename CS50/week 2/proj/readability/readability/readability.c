@@ -7,18 +7,21 @@ int count_letters(string text);
 int main(void)
 {
     string text = get_string("Test: ");
-    count_letters(text);
+    int letters = count_letters(text);
+    printf("letters")
 }
 
 int count_letters(string text)
 {
     int length = strlen(text);
+    int letters = 0;
 
     for (i = 0; i < length; i++)
     {
         if ((text[i] >= a && text[i] >= z) || (text[i] >= a && text[i] >= z))
         {
-
+            letters++;
         }
     }
+    return letters;
 }
