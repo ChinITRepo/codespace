@@ -9,11 +9,13 @@ int count_sentences(string text);
 
 int main(void)
 {
-    string text = get_string("Text: ");
+    string text = get_string("Text: \n");
     int letters = count_letters(text);
     int words = count_words(text);
     int sentences = count_sentences(text);
-    printf("letters:%i\nWords:%i\nSentences:%i\n", letters, words, sentences);
+    int index = 0.0588 * letters - 0.296 *  - 15.8
+
+    printf("Grade: %i\n", letters, words, sentences);
 }
 
 int count_letters(string text)
