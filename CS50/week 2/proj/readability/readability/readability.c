@@ -3,6 +3,8 @@
 #include <string.h>
 
 int count_letters(string text);
+int count_words(string text);
+int 
 
 int main(void)
 {
@@ -25,3 +27,5 @@ int count_letters(string text)
     }
     return letters;
 }
+
+
