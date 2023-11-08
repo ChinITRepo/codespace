@@ -16,7 +16,7 @@ int count_letters(string text)
 
     for (i = 0; i < length; i++)
     {
-        if (text[i] >=)
+        if ((text[i] >= a && text[i] >= z) || (text[i] >= a && text[i] >= z))
         {
 
         }
