@@ -16,7 +16,7 @@ int count_letters(string text)
 
     for (i = 0; i < length; i++)
     {
-        if (s = )
+        if (text[i] =)
         {
 
         }
