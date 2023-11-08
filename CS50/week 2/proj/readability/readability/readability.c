@@ -13,9 +13,9 @@ int main(void)
     int letters = count_letters(text);
     int words = count_words(text);
     int sentences = count_sentences(text);
-    int index = 0.0588 * letters - 0.296 *  - 15.8
+    int grade = int coleman_Liau_index(letters, words, sentences);
 
-    printf("Grade: %i\n", letters, words, sentences);
+    printf("Grade: %i\n", letters);
 }
 
 int count_letters(string text)
@@ -65,5 +65,5 @@ int count_sentences(string text)
 
 int coleman_Liau_index(int l, int w, int s)
 {
-    
+
 }
