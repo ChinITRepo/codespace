@@ -9,24 +9,27 @@ int coleman_Liau_index(int l, int w, int s);
 
 int main(void)
 {
-    string text = get_string("Text: \n");
+    string text = get_string("Text: ");
     int letters = count_letters(text);
     int words = count_words(text);
     int sentences = count_sentences(text);
     int grade = coleman_Liau_index(letters, words, sentences);
 
-    switch (grade)
+    if (grade < 1)
     {
-        case grade < 1:
-            printf("Before Grade 1\n");
-            break;
-        case grade > 16:
-            printf("Grade 16+\n");
-            break;
+        printf("Before Grade 1\n");
+    }
+    else if (grade > 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else if (grade >= 1 && grade <= 16)
+    {
+        printf("Grade: %i\n", grade);
     }
     else
     {
-        printf("Grade: %i\n", grade);
+        return 1;
     }
 
 
