@@ -15,7 +15,17 @@ int main(void)
     int sentences = count_sentences(text);
     int grade = coleman_Liau_index(letters, words, sentences);
 
+    switch (grade)
+    {
+        case grade < 1:
+            printf("Grade: %i\n", grade)
+            break;
+        case grade > 16:
+            printf("Grade: %i\n", grade)
+    }
     printf("Grade: %i\n", grade);
+
+    return 0;
 }
 
 int count_letters(string text)
@@ -68,6 +78,5 @@ int coleman_Liau_index(int l, int w, int s)
     int average_letters = (l / w * 100);
     int average_sentences = (s / w * 100);
     int index = 0.0588 * average_letters - 0.296 * average_sentences - 15.8;
-
     return index;
 }
