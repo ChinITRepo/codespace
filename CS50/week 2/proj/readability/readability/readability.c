@@ -35,7 +35,7 @@ int count_words(string text)
 
     for (int i = 0; i < length; i++)
     {
-        if (text[i] = ' ' && text[i] >= z)
+        if (text[i] = ' ' && text[i - 1] != )
         {
             words++;
         }
