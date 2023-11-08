@@ -18,12 +18,17 @@ int main(void)
     switch (grade)
     {
         case grade < 1:
-            printf("Grade: %i\n", grade)
+            printf("Before Grade 1\n");
             break;
         case grade > 16:
-            printf("Grade: %i\n", grade)
+            printf("Grade 16+\n");
+            break;
     }
-    printf("Grade: %i\n", grade);
+    else
+    {
+        printf("Grade: %i\n", grade);
+    }
+
 
     return 0;
 }
