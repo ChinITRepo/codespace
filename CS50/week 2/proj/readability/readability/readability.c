@@ -12,7 +12,7 @@ int main(void)
     int letters = count_letters(text);
     int words = count_words(text);
     int sentences = count_sentences(text);
-    printf("letters:%i\nWords:%i\nSentences:%i", letters, words, sentences);
+    printf("letters:%i\nWords:%i\nSentences:%i\n", letters, words, sentences);
 }
 
 int count_letters(string text)
