@@ -93,8 +93,11 @@ int coleman_Liau_index(int letters, int words, int sentences)
     float index = 0.0588 * average_letters - 0.296 * average_sentences - 15.8;
     if (index < 0)
     {
-        
-
+        return (int) round(index);
+    }
+    else
+    {
+        return (int) round(index);
     }
     printf("index: %i\n", (int) index);
     return (int) index;
