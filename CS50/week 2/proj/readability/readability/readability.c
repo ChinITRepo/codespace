@@ -84,7 +84,7 @@ int count_sentences(string text)
 
 int coleman_Liau_index(int letters, int words, int sentences)
 {
-    printf("letters:%i\nwordsL", letters,words,sentences);
+    printf("letters:%i\nwords:\n", letters,words,sentences);
     int average_letters = (letters / (words * 100));
     int average_sentences = (sentences / (w * 100));
     int index = 0.0588 * average_letters - 0.296 * average_sentences - 15.8;
