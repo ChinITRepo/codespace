@@ -14,7 +14,7 @@ int main(void)
     int words = count_words(text);
     int sentences = count_sentences(text);
     int grade = coleman_Liau_index(letters, words, sentences);
-    printf("grade: %i", grade);
+    printf("grade: %i\n", grade);
 
     if (grade < 1)
     {
