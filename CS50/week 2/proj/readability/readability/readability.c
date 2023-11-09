@@ -90,6 +90,10 @@ int coleman_Liau_index(int letters, int words, int sentences)
     float average_sentences = ((float) words * 100) / sentences;
     printf("average Sen: %i\n", average_sentences);
     float index = 0.0588 * average_letters - 0.296 * average_sentences - 15.8;
+    if (index )
+    {
+        
+    }
     printf("index: %i\n", (int) index);
     return (int) index;
 }
