@@ -85,7 +85,6 @@ int coleman_Liau_index(int letters, int words, int sentences)
 
 void return_grade(int grade)
 {
-    printf("Grade: %i\n",grade);
     if (grade < 1)
     {
         printf("Before Grade 1\n");
@@ -98,5 +97,4 @@ void return_grade(int grade)
     {
         printf("Grade: %i\n", grade);
     }
-
 }
