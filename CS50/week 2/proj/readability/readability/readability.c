@@ -8,7 +8,7 @@ int count_letters(string text);
 int count_words(string text);
 int count_sentences(string text);
 int coleman_Liau_index(int letters, int words, int sentences);
-void return_grade(int grade)
+void return_grade(int grade);
 
 int main(void)
 {
@@ -17,27 +17,12 @@ int main(void)
     int words = count_words(text);
     int sentences = count_sentences(text);
     int grade = coleman_Liau_index(letters, words, sentences);
-    printf("grade: %i\n", grade);
-
-    if (grade < 1)
-    {
-        printf("Before Grade 1\n");
-    }
-    else if (grade > 16)
-    {
-        printf("Grade 16+\n");
-    }
-    else if (grade >= 1 && grade <= 16)
-    {
-        printf("Grade: %i\n", grade);
-    }
-    else
-    {
-        return 1;
-    }
-
-
     return 0;
+}
+
+string get_text(void)
+{
+    string text = get_string("Text: ");
 }
 
 int count_letters(string text)
@@ -96,7 +81,23 @@ int coleman_Liau_index(int letters, int words, int sentences)
     return (int) round(index);
 }
 
-string get_text(void)
+void return_score(int grade)
 {
-    string text = get_string("Text: ");
+    if (grade < 1)
+    {
+        printf("Before Grade 1\n");
+    }
+    else if (grade > 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else if (grade >= 1 && grade <= 16)
+    {
+        printf("Grade: %i\n", grade);
+    }
+    else
+    {
+        return 1;
+    }
+
 }
