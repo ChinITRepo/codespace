@@ -1,14 +1,21 @@
 #include <stdio.h>
 #include <cs50.h>
 
-long check_
+long check_number(long card_number);
 
 int main(void)
 {
-    long card_number = get_long("Number: ");
+    do
+    {
+        long card_number = get_long("Number: ");
+    }
+    while (card_number = )
 }
 
+long check_number(long card_number)
+{
 
+}
 /*
 Take card number
     long number
