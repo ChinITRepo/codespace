@@ -23,6 +23,7 @@ int main(void)
 string get_text(void)
 {
     string text = get_string("Text: ");
+    return text;
 }
 
 int count_letters(string text)
@@ -94,10 +95,6 @@ void return_score(int grade)
     else if (grade >= 1 && grade <= 16)
     {
         printf("Grade: %i\n", grade);
-    }
-    else
-    {
-        return 1;
     }
 
 }
