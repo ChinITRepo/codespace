@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    card
+    long card_number = get_long("");
 }
 /*
 Take card number
