@@ -17,6 +17,7 @@ int main(void)
     int words = count_words(text);
     int sentences = count_sentences(text);
     int grade = coleman_Liau_index(letters, words, sentences);
+    return_grade(grade);
     return 0;
 }
 
@@ -82,7 +83,7 @@ int coleman_Liau_index(int letters, int words, int sentences)
     return (int) round(index);
 }
 
-void return_score(int grade)
+void return_grade(int grade)
 {
     printf("Grade: %i\n",grade);
     if (grade < 1)
