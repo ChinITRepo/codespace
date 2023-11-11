@@ -20,8 +20,13 @@ int main(void)
     for (int i = 0; i < players; i++)
     {
         playerarray[i].player_number = i + 1;
-        playerarray[i].word = get_string("player %i: ", playerarray[i].player_number);
+        do
+        {
+            playerarray[i].word = get_string("player %i: ", playerarray[i].player_number);
+        }
+        while (playerarray[i].word != );
         playerarray[i].score += calc_score(playerarray[i].word);
+        printf("Player: %i\nWord: %s\nScore: %i\n",playerarray[i].player_number, playerarray[i].word, playerarray[i].score);
     }
 
     if (playerarray[0].score > playerarray[1].score)
@@ -41,7 +46,7 @@ int main(void)
 int calc_score(string word)
 {
     int score = 0;
-    
+
     for (int i = 0; i < (int) strlen(word); i++)
     {
         switch(word[i])
