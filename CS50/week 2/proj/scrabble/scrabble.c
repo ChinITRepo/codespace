@@ -21,14 +21,9 @@ int main(void)
     {
         playerarray[i].player_number = i + 1;
         playerarray[i].score = 0;
-
-        do
-        {
-            playerarray[i].word = get_string("player %i: ", playerarray[i].player_number);
-        }
-        while (playerarray[i].word == NULL);
-
-        playerarray[i].score += calc_score(playerarray[i].word);
+        playerarray[i].word = get_string("player %i: ", playerarray[i].player_number);
+        playerarray[i].score = calc_score(playerarray[i].word);
+        
         printf("Player: %i\nWord: %s\nScore: %i\n",playerarray[i].player_number, playerarray[i].word, playerarray[i].score);
     }
 
@@ -36,7 +31,7 @@ int main(void)
     {
         printf("player 1 wins!\n");
     }
-    else if (playerarray[0].score > playerarray[1].score)
+    else if (playerarray[1].score > playerarray[0].score)
     {
         printf("Player 2 wins!\n");
     }
