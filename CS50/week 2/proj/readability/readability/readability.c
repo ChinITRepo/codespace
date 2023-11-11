@@ -30,11 +30,12 @@ string get_text(void)
 int count_letters(string text)
 {
     int length = strlen(text);
+    printf("Length: %i\n", length);
     int letters = 0;
 
     for (int i = 0; i < length; i++)
     {
-        if ((text[i] >= 'a' && text[i] >= 'z') || (text[i] >= 'A' && text[i] >= 'Z'))
+        if ((text[i] >= 'a' && text[i] <= 'z') || (text[i] >= 'A' && text[i] <= 'Z'))
         {
             letters++;
         }
