@@ -61,7 +61,7 @@ int calc_score(string word)
             case 's'  :
             case 't'  :
             case 'u'  :
-                score += 1;
+                score++;
                 break;
 
             case 'd'   :
@@ -95,6 +95,10 @@ int calc_score(string word)
             case 'q' :
             case 'z' :
                 score += 10;
+                break;
+
+            default:
+                score += 0;
                 break;
         }
     }
