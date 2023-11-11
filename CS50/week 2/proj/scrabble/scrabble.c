@@ -24,7 +24,7 @@ int main(void)
         {
             playerarray[i].word = get_string("player %i: ", playerarray[i].player_number);
         }
-        while (playerarray[i].word != );
+        while (playerarray[i].word != "");
         playerarray[i].score += calc_score(playerarray[i].word);
         printf("Player: %i\nWord: %s\nScore: %i\n",playerarray[i].player_number, playerarray[i].word, playerarray[i].score);
     }
