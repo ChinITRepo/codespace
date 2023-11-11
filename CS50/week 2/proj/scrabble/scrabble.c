@@ -20,12 +20,13 @@ int main(void)
     for (int i = 0; i < players; i++)
     {
         playerarray[i].player_number = i + 1;
+        playerarray[i].score = 0;
         do
         {
             playerarray[i].word = get_string("player %i: ", playerarray[i].player_number);
         }
         while (playerarray[i].word == NULL);
-        playerarray[i].score += calc_score(playerarray[i].word);
+        playerarray[i].score = calc_score(playerarray[i].word);
         printf("Player: %i\nWord: %s\nScore: %i\n",playerarray[i].player_number, playerarray[i].word, playerarray[i].score);
     }
 
