@@ -23,7 +23,7 @@ int main(void)
         playerarray[i].score = 0;
         playerarray[i].word = get_string("player %i: ", playerarray[i].player_number);
         playerarray[i].score = calc_score(playerarray[i].word);
-        
+
         printf("Player: %i\nWord: %s\nScore: %i\n",playerarray[i].player_number, playerarray[i].word, playerarray[i].score);
     }
 
@@ -50,48 +50,73 @@ int calc_score(string word)
         switch(word[i])
         {
             case 'a'  :
+            case 'A'  :
             case 'e'  :
+            case 'E'  :
             case 'i'  :
+            case 'I'  :
             case 'l'  :
+            case 'L'  :
             case 'n'  :
+            case 'N'  :
             case 'o'  :
+            case 'O'  :
             case 'r'  :
+            case 'R'  :
             case 's'  :
+            case 'S'  :
             case 't'  :
+            case 'T'  :
             case 'u'  :
+            case 'U'  :
                 score++;
                 break;
 
             case 'd'   :
+            case 'D'   :
             case 'g'   :
+            case 'G'   :
                 score += 2;
                 break;
 
             case 'b'   :
+            case 'B'   :
             case 'c'   :
+            case 'C'   :
             case 'm'   :
+            case 'M'   :
             case 'p'   :
+            case 'P'   :
                 score += 3;
                 break;
 
             case 'h'   :
+            case 'H'   :
             case 'v'   :
-            case 'w'   :
+            case 'V'   :
             case 'y'   :
+            case 'Y'   :
+            case 'w'   :
+            case 'W'   :
                 score +=4 ;
                 break;
 
             case 'k'   :
+            case 'K'   :
                 score += 5;
                 break;
 
             case 'j' :
+            case 'J' :
             case 'x' :
+            case 'X' :
                 score += 8;
                 break;
 
             case 'q' :
+            case 'Q' :
             case 'z' :
+            case 'Z' :
                 score += 10;
                 break;
 
