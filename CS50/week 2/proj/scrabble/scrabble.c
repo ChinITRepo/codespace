@@ -31,7 +31,7 @@ int main(void)
     }
 }
 
-string word(void)
+string get_words(void)
 {
     int players = 2;
     player playerarray[players];
@@ -43,6 +43,7 @@ string word(void)
         playerarray[i].word = get_string("player %i: ", playerarray[i].player_number);
         playerarray[i].score = calc_score(playerarray[i].word);
     }
+    return playerarray[2];
 }
 
 int calc_score(string word)
