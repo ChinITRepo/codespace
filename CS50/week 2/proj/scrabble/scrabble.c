@@ -11,21 +11,11 @@ typedef struct
 player;
 
 int calc_score(string word);
+string word(void);
 
 int main(void)
 {
-    int players = 2;
-    player playerarray[players];
 
-    for (int i = 0; i < players; i++)
-    {
-        playerarray[i].player_number = i + 1;
-        playerarray[i].score = 0;
-        playerarray[i].word = get_string("player %i: ", playerarray[i].player_number);
-        playerarray[i].score = calc_score(playerarray[i].word);
-
-        printf("Player: %i\nWord: %s\nScore: %i\n",playerarray[i].player_number, playerarray[i].word, playerarray[i].score);
-    }
 
     if (playerarray[0].score > playerarray[1].score)
     {
@@ -38,6 +28,20 @@ int main(void)
     else
     {
         printf("Tie!\n");
+    }
+}
+
+string word(void)
+{
+    int players = 2;
+    player playerarray[players];
+
+    for (int i = 0; i < players; i++)
+    {
+        playerarray[i].player_number = i + 1;
+        playerarray[i].score = 0;
+        playerarray[i].word = get_string("player %i: ", playerarray[i].player_number);
+        playerarray[i].score = calc_score(playerarray[i].word);
     }
 }
 
