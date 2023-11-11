@@ -21,11 +21,6 @@ int main(void)
     {
         playerarray[i].player_number = i + 1;
         playerarray[i].word = get_string("player %i: ", playerarray[i].player_number);
-    }
-
-    for (int i = 0; i < players; i++)
-    {
-        playerarray[i].score = 0;
         playerarray[i].score += calc_score(playerarray[i].word);
     }
 
@@ -46,7 +41,7 @@ int main(void)
 int calc_score(string word)
 {
     int score = 0;
-
+    
     for (int i = 0; i < (int) strlen(word); i++)
     {
         switch(word[i])
