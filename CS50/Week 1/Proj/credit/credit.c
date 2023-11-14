@@ -2,24 +2,27 @@
 #include <cs50.h>
 #include <math.h>
 
+int check_length(long);
+
+
 int main(void)
 {
-    card_number();
+    long card_number = get_long("Number: ");
+    check_length(card_number);
 }
 
-long check_number(void)
+int check_length(long)
 {
-    long card_number = get_long("Number: ");
     int length = 0;
     for (int i = 0; i < card_number; i++)
     {
-        length++
+        length++;
     }
     if (length != 13 || 15 || 16)
     {
         printf("INVLAID\n");
     }
-
+    return length;
 }
 
 /*
