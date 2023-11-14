@@ -48,8 +48,9 @@ string check_brand(long card_number)
        first_nums[i] = card_number[i];
        if (card_number[0] == 4)
        {
-            
+            bank = "VISA";
        }
+       
     }
 
     switch(first_nums)
