@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <cs50.h>
-#include <math.h>
 
+struct 
+{
+
+}
 int check_length(long);
 void check_brand(long);
 
