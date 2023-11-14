@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <cs50.h>
 
-struct 
+typedef struct
 {
-
+    long card_number;
+    int length;
 }
+
 int check_length(long);
 void check_brand(long);
 
