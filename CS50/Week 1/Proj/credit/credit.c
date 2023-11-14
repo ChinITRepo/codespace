@@ -14,11 +14,11 @@ int check_length(long);
 int main(void)
 {
     card card;
-    card.card_number = get_long("Number: ");
+    card.card_number =get_long("Number: ");
     card.length = check_length(card.card_number);
 }
 
-int check_length(long card_number)
+int check_length(long *card_number)
 {
     int length = 0;
     for (int i = 0; i < card_number; i++)
