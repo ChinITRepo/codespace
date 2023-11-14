@@ -37,17 +37,18 @@ int check_length(long card_number)
     }
 }
 
-string check_start(long card_number)
+void check_start(long card_number)
 {
+    if (card_number[0] = 4)
+    {
+
+    }
     int numbers = 2;
     string bank;
 
     for (int i = 0; i < numbers; i++)
     {
-       if (card_number[i];)
-       {
-        
-       }
+
     }
 }
 /*
