@@ -21,10 +21,7 @@ int main(void)
 int check_length(long *card_number)
 {
     int length = 0;
-    for (int i = 0; i < card_number; i++)
-    {
-        length++;
-    }
+    while
     if ((length != 13 && card_number[0] != 4) || (length != 15) || (length != 16))
     {
         return printf("INVLAID\n");
