@@ -10,8 +10,6 @@ typedef struct
 card;
 
 int check_length(long);
-void check_start(long);
-
 
 int main(void)
 {
@@ -27,7 +25,7 @@ int check_length(long card_number)
     {
         length++;
     }
-    if ((length != 13) || (length != 15) || (length != 16))
+    if ((length != 13 && card_number[0] != 4) || (length != 15) || (length != 16))
     {
         return printf("INVLAID\n");
     }
@@ -37,17 +35,6 @@ int check_length(long card_number)
     }
 }
 
-int check_start(long card_number)
-{
-    if (card_number[0] = 4)
-    {
-        return 0;
-    }
-    switch(card_number[0]card_number[1])
-    {
-        case:
-    }
-}
 /*
 Take card number
     long number
