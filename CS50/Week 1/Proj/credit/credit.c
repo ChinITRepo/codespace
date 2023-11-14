@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <cs50.h>
-
-long check_number(long card_number);
+#include <math.h>
 
 int main(void)
 {
@@ -10,11 +9,11 @@ int main(void)
 
 long check_number(void)
 {
-    do
-    {
-        long card_number = get_long("Number: ");
-    }
+    long card_number = get_long("Number: ");
+    int length = 
+
 }
+
 /*
 Take card number
     long number
