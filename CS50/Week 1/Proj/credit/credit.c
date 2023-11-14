@@ -27,7 +27,7 @@ int check_length(long card_number)
     {
         length++;
     }
-    if (length != 13 || length != 15 || length != 16)
+    if ((length != 13) || (length != 15) || (length != 16))
     {
         return printf("INVLAID\n");
     }
