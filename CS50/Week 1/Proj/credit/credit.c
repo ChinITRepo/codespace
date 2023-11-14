@@ -40,12 +40,14 @@ int check_length(long card_number)
 string check_start(long card_number)
 {
     int numbers = 2;
-    int first_nums[numbers];
     string bank;
 
     for (int i = 0; i < numbers; i++)
     {
-       first_nums[i] = card_number[i];
+       if (card_number[i];)
+       {
+        
+       }
     }
 }
 /*
