@@ -3,7 +3,7 @@
 
 typedef struct
 {
-    long card_number;
+    long *card_number;
     int length;
     string bank;
 }
