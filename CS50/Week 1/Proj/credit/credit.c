@@ -51,6 +51,7 @@ string check_brand(long card_number)
             bank = "VISA";
        }
        
+
     }
 
     switch(first_nums)
