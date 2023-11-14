@@ -39,10 +39,8 @@ int check_length(long card_number)
 
 void check_brand(long card_number)
 {
-    switch (card_number)
-    {
-
-    }
+    int first_nums[2];
+    
 }
 /*
 Take card number
