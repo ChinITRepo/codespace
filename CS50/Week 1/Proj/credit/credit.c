@@ -3,7 +3,7 @@
 #include <math.h>
 
 int check_length(long);
-check_brand();
+void check_brand(long);
 
 
 int main(void)
@@ -12,7 +12,7 @@ int main(void)
     int length = check_length(card_number);
 }
 
-int check_length(long)
+int check_length(long card_number)
 {
     int length = 0;
     for (int i = 0; i < card_number; i++)
@@ -26,10 +26,20 @@ int check_length(long)
     return length;
 }
 
+void check_brand(long)
+{
+
+}
 /*
 Take card number
     long number
 if length:
+    13 - Visa
     15 - amex
-    16
+    16 - Mastercard/Visa
+else:
+    INVALID
+if cardnumber:
+    4 - Visa
+    34/37 - AmEx
 */
