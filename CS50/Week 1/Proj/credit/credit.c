@@ -41,11 +41,13 @@ string check_brand(long card_number)
 {
     int numbers = 2;
     int first_nums[numbers];
+
     for (int i = 0; i < numbers; i++)
     {
        first_nums[i] = card_number[i]
     }
-    switch()
+
+    switch(first_nums)
     {
         
     }
