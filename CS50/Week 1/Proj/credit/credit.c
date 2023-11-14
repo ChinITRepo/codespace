@@ -5,7 +5,7 @@ typedef struct
 {
     long card_number;
     int length;
-    string brand
+    string bank;
 }
 
 int check_length(long);
