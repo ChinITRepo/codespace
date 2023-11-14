@@ -10,7 +10,7 @@ int main(void)
 long check_number(void)
 {
     long card_number = get_long("Number: ");
-    int length = 
+    for (i = 0;i < card_number)
 
 }
 
