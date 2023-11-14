@@ -7,6 +7,7 @@ typedef struct
     int length;
     string bank;
 }
+card;
 
 int check_length(long);
 void check_brand(long);
@@ -14,8 +15,9 @@ void check_brand(long);
 
 int main(void)
 {
-    long card_number = get_long("Number: ");
-    int length = check_length(card_number);
+    card card;
+    card.card_number = get_long("Number: ");
+    card.length = check_length(card.card_number);
 }
 
 int check_length(long card_number)
@@ -27,14 +29,18 @@ int check_length(long card_number)
     }
     if (length != 13 || 15 || 16)
     {
-        printf("INVLAID\n");
+        return printf("INVLAID\n");
     }
-    return length;
+    else
+    {
+        return length;
+    }
 }
 
-void check_brand(long)
+void check_brand(long card_number)
 {
-
+    switch ()
+        case:
 }
 /*
 Take card number
