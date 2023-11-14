@@ -15,12 +15,10 @@ long check_number(void)
     {
         length++
     }
-    do
+    if (length != 13 || 15 || 16)
     {
-        printf("INVALID\n")
-
+        printf("")
     }
-    while (length != 15)
 
 }
 
