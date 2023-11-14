@@ -9,13 +9,13 @@ typedef struct
 }
 card;
 
-int check_length(long);
+int check_length(long card_number);
 
 int main(void)
 {
     card card;
-    card.card_number =get_long("Number: ");
-    card.length = check_length(card.card_number);
+    *card.card_number = get_long("Number: ");
+    card.length = check_length(*card.card_number);
 }
 
 int check_length(long *card_number)
