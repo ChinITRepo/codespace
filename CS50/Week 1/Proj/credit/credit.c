@@ -10,7 +10,7 @@ typedef struct
 card;
 
 int check_length(long);
-void check_brand(long);
+void check_start(long);
 
 
 int main(void)
@@ -37,7 +37,7 @@ int check_length(long card_number)
     }
 }
 
-string check_brand(long card_number)
+string check_start(long card_number)
 {
     int numbers = 2;
     int first_nums[numbers];
@@ -46,17 +46,6 @@ string check_brand(long card_number)
     for (int i = 0; i < numbers; i++)
     {
        first_nums[i] = card_number[i];
-       if (card_number[0] == 4)
-       {
-            bank = "VISA";
-       }
-       
-
-    }
-
-    switch(first_nums)
-    {
-
     }
 }
 /*
