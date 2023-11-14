@@ -10,7 +10,17 @@ int main(void)
 long check_number(void)
 {
     long card_number = get_long("Number: ");
-    for (i = 0;i < card_number)
+    int length = 0;
+    for (int i = 0; i < card_number; i++)
+    {
+        length++
+    }
+    do
+    {
+        printf("INVALID\n")
+
+    }
+    while ()
 
 }
 
