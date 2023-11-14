@@ -20,7 +20,7 @@ long check_number(void)
         printf("INVALID\n")
 
     }
-    while ()
+    while (length != 15)
 
 }
 
