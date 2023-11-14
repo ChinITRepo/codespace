@@ -3,12 +3,13 @@
 #include <math.h>
 
 int check_length(long);
+check_brand();
 
 
 int main(void)
 {
     long card_number = get_long("Number: ");
-    check_length(card_number);
+    int length = check_length(card_number);
 }
 
 int check_length(long)
