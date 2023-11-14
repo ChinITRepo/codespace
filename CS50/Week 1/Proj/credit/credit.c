@@ -45,11 +45,12 @@ string check_brand(long card_number)
     for (int i = 0; i < numbers; i++)
     {
        first_nums[i] = card_number[i]
+       if (card)
     }
 
     switch(first_nums)
     {
-        
+
     }
 }
 /*
