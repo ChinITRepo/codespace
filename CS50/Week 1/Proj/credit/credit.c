@@ -41,8 +41,9 @@ void check_start(long card_number)
 {
     if (card_number[0] = 4)
     {
-
+        return;
     }
+
     int numbers = 2;
     string bank;
 
