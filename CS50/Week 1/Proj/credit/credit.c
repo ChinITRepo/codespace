@@ -35,11 +35,13 @@ Take card number
     long number
 if length:
     13 - Visa
-    15 - amex
+    15 - AmEx
     16 - Mastercard/Visa
 else:
     INVALID
 if cardnumber:
     4 - Visa
     34/37 - AmEx
+    51-57 - Mastercard
+
 */
