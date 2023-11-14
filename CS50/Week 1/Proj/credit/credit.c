@@ -17,7 +17,7 @@ long check_number(void)
     }
     if (length != 13 || 15 || 16)
     {
-        printf("")
+        printf("INVLAID\n");
     }
 
 }
