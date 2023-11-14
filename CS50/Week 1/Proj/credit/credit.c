@@ -40,7 +40,9 @@ int check_length(long card_number)
 void check_brand(long card_number)
 {
     switch ()
-        case:
+    {
+        
+    }
 }
 /*
 Take card number
