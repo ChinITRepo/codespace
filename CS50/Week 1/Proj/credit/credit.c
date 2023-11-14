@@ -37,11 +37,11 @@ int check_length(long card_number)
     }
 }
 
-void check_start(long card_number)
+string check_start(long card_number)
 {
     if (card_number[0] = 4)
     {
-        return;
+        return ;
     }
 
     int numbers = 2;
