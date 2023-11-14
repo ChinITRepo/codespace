@@ -43,7 +43,7 @@ void check_brand(long card_number)
     int first_nums[numbers];
     for (int i = 0; i < numbers; i++)
     {
-        
+       first_nums[i] = card_number[i]
     }
 }
 /*
