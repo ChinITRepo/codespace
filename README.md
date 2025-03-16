@@ -24,25 +24,27 @@ curl -fsSL https://raw.githubusercontent.com/ChinITRepo/infrastructure-automatio
 curl -fsSL https://raw.githubusercontent.com/ChinITRepo/infrastructure-automation/main/bootstrap.sh | bash -s -- --controller
 ```
 
-### Git-Based Installation
+### Client Device Setup
 
-For direct Git-based installation:
+For setting up client devices (laptops, tablets, and phones) to work with the infrastructure:
 
-```bash
-# Clone the repository
-git clone https://github.com/ChinITRepo/infrastructure-automation.git
-
-# Navigate to the directory
-cd infrastructure-automation
-
-# Run the setup script (Windows)
-.\setup.ps1 -Mode controller
-
-# OR Run the setup script (Linux/macOS)
-./setup.sh --mode controller
+#### Windows Laptop:
+```powershell
+iex "& {$(irm https://raw.githubusercontent.com/ChinITRepo/infrastructure-automation/main/client-devices/windows-laptop-setup.ps1)}"
 ```
 
-For detailed installation instructions, see [INSTALL.md](INSTALL.md).
+#### macOS:
+```bash
+curl -fsSL https://raw.githubusercontent.com/ChinITRepo/infrastructure-automation/main/client-devices/macos-setup.sh | bash
+```
+
+#### Mobile (Android/iOS):
+```bash
+# Generate setup guides
+curl -fsSL https://raw.githubusercontent.com/ChinITRepo/infrastructure-automation/main/client-devices/mobile-setup.sh | bash -s -- --platform android --action guide
+```
+
+For detailed installation instructions and more one-liners, see [Quick Reference](docs/QUICK_REFERENCE.md) and [INSTALL.md](INSTALL.md).
 
 ## Overview
 
