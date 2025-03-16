@@ -144,4 +144,86 @@ variable "elk_port" {
   description = "Port of the ELK stack"
   type        = number
   default     = 5044
+}
+
+# CloudWatch dashboard variables
+variable "create_cloudwatch_dashboard" {
+  description = "Whether to create a CloudWatch dashboard for log visualization"
+  type        = bool
+  default     = true
+}
+
+# CloudWatch alarm variables
+variable "create_cloudwatch_alarms" {
+  description = "Whether to create CloudWatch alarms for log monitoring"
+  type        = bool
+  default     = true
+}
+
+variable "cloudwatch_alarm_actions" {
+  description = "List of ARNs for CloudWatch alarm actions (SNS topics, etc.)"
+  type        = list(string)
+  default     = []
+}
+
+# Log analysis variables
+variable "enable_log_analysis" {
+  description = "Whether to enable advanced log analysis with Lambda"
+  type        = bool
+  default     = false
+}
+
+variable "notification_sns_topic" {
+  description = "ARN of the SNS topic for log analysis notifications"
+  type        = string
+  default     = ""
+}
+
+# Log security variables
+variable "encrypt_log_data" {
+  description = "Whether to encrypt log data in transit and at rest"
+  type        = bool
+  default     = true
+}
+
+variable "log_access_logging" {
+  description = "Whether to enable access logging for log archives"
+  type        = bool
+  default     = true
+}
+
+# Advanced log configuration
+variable "log_patterns_to_alert" {
+  description = "List of log patterns that should trigger alerts"
+  type        = list(string)
+  default     = [
+    "ERROR",
+    "CRITICAL",
+    "FATAL",
+    "EXCEPTION",
+    "FAIL",
+    "DENIED",
+    "UNAUTHORIZED",
+    "ATTACK",
+    "VULNERABILITY"
+  ]
+}
+
+variable "custom_log_parsing_rules" {
+  description = "Custom parsing rules for log formats"
+  type        = string
+  default     = ""
+}
+
+# Log integration with other AWS services
+variable "integrate_with_guardduty" {
+  description = "Whether to integrate logs with GuardDuty for security analysis"
+  type        = bool
+  default     = false
+}
+
+variable "integrate_with_security_hub" {
+  description = "Whether to integrate logs with Security Hub"
+  type        = bool
+  default     = false
 } 

@@ -5,6 +5,7 @@
  * - Syslog server (rsyslog/syslog-ng)
  * - Log storage and rotation
  * - Log forwarding to monitoring systems
+ * - CloudWatch dashboards and alerts
  */
 
 locals {
@@ -294,4 +295,248 @@ output "log_archive_bucket" {
 output "cloudwatch_log_group" {
   description = "CloudWatch log group for centralized logs"
   value       = var.cloud_provider == "aws" && var.enable_cloudwatch_logs ? aws_cloudwatch_log_group.central_logs[0].name : null
+}
+
+# CloudWatch Dashboard for log monitoring
+resource "aws_cloudwatch_dashboard" "logs_dashboard" {
+  count = var.cloud_provider == "aws" && var.enable_cloudwatch_logs && var.create_cloudwatch_dashboard ? 1 : 0
+  
+  dashboard_name = "${var.environment}-logs-dashboard"
+  
+  dashboard_body = jsonencode({
+    widgets = [
+      {
+        type   = "text",
+        x      = 0,
+        y      = 0,
+        width  = 24,
+        height = 1,
+        properties = {
+          markdown = "# ${upper(var.environment)} Environment - Log Management Dashboard"
+        }
+      },
+      {
+        type   = "metric",
+        x      = 0,
+        y      = 1,
+        width  = 12,
+        height = 6,
+        properties = {
+          metrics = [
+            [ "AWS/Logs", "IncomingLogEvents", "LogGroupName", "/infra/${var.environment}/centralized-logs" ],
+            [ ".", "IncomingBytes", ".", "." ]
+          ],
+          view    = "timeSeries",
+          stacked = false,
+          region  = data.aws_region.current.name,
+          title   = "Incoming Log Events and Size",
+          period  = 300
+        }
+      },
+      {
+        type   = "metric",
+        x      = 12,
+        y      = 1,
+        width  = 12,
+        height = 6,
+        properties = {
+          metrics = [
+            [ "AWS/EC2", "CPUUtilization", "InstanceId", count.index > 0 ? aws_instance.syslog_server[0].id : "" ],
+            [ ".", "DiskReadBytes", ".", "." ],
+            [ ".", "DiskWriteBytes", ".", "." ]
+          ],
+          view    = "timeSeries",
+          stacked = false,
+          region  = data.aws_region.current.name,
+          title   = "Syslog Server Performance",
+          period  = 300
+        }
+      },
+      {
+        type   = "log",
+        x      = 0,
+        y      = 7,
+        width  = 24,
+        height = 6,
+        properties = {
+          query   = "SOURCE '/infra/${var.environment}/centralized-logs' | fields @timestamp, @message | sort @timestamp desc | limit 100",
+          region  = data.aws_region.current.name,
+          title   = "Recent Log Entries",
+          view    = "table"
+        }
+      }
+    ]
+  })
+}
+
+# CloudWatch Alarms for log monitoring
+resource "aws_cloudwatch_metric_alarm" "syslog_server_high_cpu" {
+  count = var.cloud_provider == "aws" && var.deploy_syslog_server && var.create_cloudwatch_alarms ? 1 : 0
+  
+  alarm_name          = "${var.environment}-syslog-server-high-cpu"
+  comparison_operator = "GreaterThanThreshold"
+  evaluation_periods  = 2
+  metric_name         = "CPUUtilization"
+  namespace           = "AWS/EC2"
+  period              = 300
+  statistic           = "Average"
+  threshold           = 80
+  alarm_description   = "This metric monitors the syslog server CPU utilization"
+  alarm_actions       = var.cloudwatch_alarm_actions
+  
+  dimensions = {
+    InstanceId = aws_instance.syslog_server[0].id
+  }
+}
+
+resource "aws_cloudwatch_metric_alarm" "log_group_ingestion_drops" {
+  count = var.cloud_provider == "aws" && var.enable_cloudwatch_logs && var.create_cloudwatch_alarms ? 1 : 0
+  
+  alarm_name          = "${var.environment}-log-ingestion-drops"
+  comparison_operator = "GreaterThanThreshold"
+  evaluation_periods  = 1
+  metric_name         = "DeliveryThrottling"
+  namespace           = "AWS/Logs"
+  period              = 300
+  statistic           = "Sum"
+  threshold           = 1
+  alarm_description   = "This metric monitors if logs are being throttled/dropped"
+  alarm_actions       = var.cloudwatch_alarm_actions
+  
+  dimensions = {
+    LogGroupName = aws_cloudwatch_log_group.central_logs[0].name
+  }
+}
+
+# Data source for current AWS region
+data "aws_region" "current" {}
+
+# S3 log analyzer Lambda (new feature)
+resource "aws_lambda_function" "log_analyzer" {
+  count = var.cloud_provider == "aws" && var.enable_log_archive && var.enable_log_analysis ? 1 : 0
+  
+  function_name    = "${var.environment}-log-analyzer"
+  handler          = "index.handler"
+  runtime          = "nodejs14.x"
+  role             = aws_iam_role.log_analyzer[0].arn
+  timeout          = 300
+  memory_size      = 512
+  
+  filename         = "${path.module}/files/log-analyzer.zip"
+  source_code_hash = filebase64sha256("${path.module}/files/log-analyzer.zip")
+  
+  environment {
+    variables = {
+      LOG_BUCKET        = aws_s3_bucket.log_archive[0].bucket
+      NOTIFICATION_SNS  = var.notification_sns_topic
+      ENVIRONMENT       = var.environment
+    }
+  }
+  
+  tags = {
+    Name        = "${var.environment}-log-analyzer"
+    Environment = var.environment
+    Tier        = "tier2-services"
+    Component   = "log-management"
+  }
+}
+
+# IAM Role for Log Analyzer Lambda
+resource "aws_iam_role" "log_analyzer" {
+  count = var.cloud_provider == "aws" && var.enable_log_archive && var.enable_log_analysis ? 1 : 0
+  
+  name = "${var.environment}-log-analyzer-role"
+  
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = "sts:AssumeRole"
+        Effect = "Allow"
+        Principal = {
+          Service = "lambda.amazonaws.com"
+        }
+      }
+    ]
+  })
+  
+  tags = {
+    Name        = "${var.environment}-log-analyzer-role"
+    Environment = var.environment
+    Tier        = "tier2-services"
+    Component   = "log-management"
+  }
+}
+
+# IAM Policy for Log Analyzer
+resource "aws_iam_policy" "log_analyzer" {
+  count = var.cloud_provider == "aws" && var.enable_log_archive && var.enable_log_analysis ? 1 : 0
+  
+  name        = "${var.environment}-log-analyzer-policy"
+  description = "Policy for log analyzer Lambda function"
+  
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "s3:GetObject",
+          "s3:ListBucket"
+        ],
+        Effect = "Allow",
+        Resource = [
+          aws_s3_bucket.log_archive[0].arn,
+          "${aws_s3_bucket.log_archive[0].arn}/*"
+        ]
+      },
+      {
+        Action = [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+        ],
+        Effect = "Allow",
+        Resource = "arn:aws:logs:*:*:*"
+      },
+      {
+        Action = [
+          "sns:Publish"
+        ],
+        Effect = "Allow",
+        Resource = var.notification_sns_topic
+      }
+    ]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "log_analyzer" {
+  count = var.cloud_provider == "aws" && var.enable_log_archive && var.enable_log_analysis ? 1 : 0
+  
+  role       = aws_iam_role.log_analyzer[0].name
+  policy_arn = aws_iam_policy.log_analyzer[0].arn
+}
+
+# S3 Event Notification for Log Analysis
+resource "aws_s3_bucket_notification" "log_analysis_notification" {
+  count = var.cloud_provider == "aws" && var.enable_log_archive && var.enable_log_analysis ? 1 : 0
+  
+  bucket = aws_s3_bucket.log_archive[0].id
+  
+  lambda_function {
+    lambda_function_arn = aws_lambda_function.log_analyzer[0].arn
+    events              = ["s3:ObjectCreated:*"]
+    filter_prefix       = "logs/${var.environment}/"
+  }
+}
+
+# Additional output for CloudWatch dashboard
+output "logs_dashboard_url" {
+  description = "URL of the CloudWatch logs dashboard"
+  value       = var.cloud_provider == "aws" && var.enable_cloudwatch_logs && var.create_cloudwatch_dashboard ? "https://${data.aws_region.current.name}.console.aws.amazon.com/cloudwatch/home?region=${data.aws_region.current.name}#dashboards:name=${aws_cloudwatch_dashboard.logs_dashboard[0].dashboard_name}" : null
+}
+
+# Additional output for log analyzer Lambda
+output "log_analyzer_function" {
+  description = "Name of the log analyzer Lambda function"
+  value       = var.cloud_provider == "aws" && var.enable_log_archive && var.enable_log_analysis ? aws_lambda_function.log_analyzer[0].function_name : null
 } 
