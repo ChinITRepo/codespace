@@ -1,0 +1,19 @@
+# Core requirements
+argparse>=1.4.0
+pathlib>=1.0.1
+ipaddress>=1.0.23
+
+# Network scanning dependencies
+python-nmap>=0.7.1
+scapy>=2.4.5
+
+# SSH connectivity
+paramiko>=2.10.1
+
+# Windows-specific dependencies (comment out on Linux/macOS)
+pywin32>=303; sys_platform == 'win32'
+wmi>=1.5.1; sys_platform == 'win32'
+
+# Output formatting
+tabulate>=0.8.9
+rich>=12.0.0 

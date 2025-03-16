@@ -1,0 +1,99 @@
+---
+# Infrastructure Automation Framework - Tier 0 Discovery Playbook
+# This playbook automates the discovery and assessment process
+
+- name: Network Discovery and Hardware Assessment
+  hosts: localhost
+  gather_facts: true
+  become: false
+  vars:
+    discovery_output_dir: "{{ playbook_dir }}/../../tier0-discovery/device_inventory"
+    target_subnet: "192.168.1.0/24"  # Default subnet, override with --extra-vars
+    scan_methods:
+      nmap: true
+      arp: true
+      dhcp: true
+    assessment_enabled: true
+    ssh_username: "admin"  # Default username, override with --extra-vars
+    # ssh_password should be provided via --extra-vars or vault
+
+  tasks:
+    - name: Ensure output directory exists
+      file:
+        path: "{{ discovery_output_dir }}"
+        state: directory
+        mode: '0755'
+
+    - name: Check if Python dependencies are installed
+      pip:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - python-nmap
+        - scapy
+        - paramiko
+      ignore_errors: true
+      register: pip_result
+
+    - name: Display warning about missing dependencies
+      debug:
+        msg: "Warning: Some Python dependencies are missing. Please install them using pip install -r tier0-discovery/requirements.txt"
+      when: pip_result is failed
+
+    - name: Run network discovery script
+      shell: >
+        python "{{ playbook_dir }}/../../tier0-discovery/network_scan/network_discovery.py"
+        --subnet "{{ target_subnet }}"
+        --output-dir "{{ discovery_output_dir }}"
+        {% if scan_methods.nmap %}--nmap{% endif %}
+        {% if scan_methods.arp %}--arp{% endif %}
+        {% if scan_methods.dhcp %}--dhcp{% endif %}
+      register: discovery_result
+      changed_when: discovery_result.rc == 0
+      failed_when: discovery_result.rc != 0 and discovery_result.rc != 1
+      args:
+        chdir: "{{ playbook_dir }}/../../tier0-discovery/network_scan"
+
+    - name: Display discovery result
+      debug:
+        msg: "{{ discovery_result.stdout_lines }}"
+      when: discovery_result.stdout_lines is defined
+
+    - name: Run hardware assessment script
+      shell: >
+        python "{{ playbook_dir }}/../../tier0-discovery/hardware_assessment/hardware_analyzer.py"
+        --output-dir "{{ discovery_output_dir }}"
+        --ssh-username "{{ ssh_username }}"
+        {% if ssh_password is defined %}--ssh-password "{{ ssh_password }}"{% endif %}
+      register: assessment_result
+      when: assessment_enabled
+      changed_when: assessment_result.rc == 0
+      failed_when: assessment_result.rc != 0 and assessment_result.rc != 1
+      args:
+        chdir: "{{ playbook_dir }}/../../tier0-discovery/hardware_assessment"
+
+    - name: Display assessment result
+      debug:
+        msg: "{{ assessment_result.stdout_lines }}"
+      when: assessment_enabled and assessment_result.stdout_lines is defined
+
+    - name: Generate inventory file from discovered devices
+      shell: >
+        python "{{ playbook_dir }}/../../tier0-discovery/scripts/generate_inventory.py"
+        --input-dir "{{ discovery_output_dir }}"
+        --output-file "{{ playbook_dir }}/../inventory/generated_hosts.yml"
+      register: inventory_result
+      changed_when: inventory_result.rc == 0
+      failed_when: false
+      args:
+        chdir: "{{ playbook_dir }}/../../tier0-discovery/scripts"
+
+    - name: Notify user about next steps
+      debug:
+        msg: |
+          Network discovery and hardware assessment complete.
+          
+          Next steps:
+          1. Review discovered devices in {{ discovery_output_dir }}
+          2. Run device classification playbook
+          3. Continue with Tier 1 infrastructure setup 

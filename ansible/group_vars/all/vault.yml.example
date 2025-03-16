@@ -1,0 +1,88 @@
+---
+# Infrastructure Automation Framework - Ansible Vault Example
+#
+# This is an example of an Ansible vault file. To use it:
+# 1. Copy this file to vault.yml (remove .example)
+# 2. Replace the example values with real credentials
+# 3. Encrypt the file using: ansible-vault encrypt vault.yml
+#
+# NEVER commit unencrypted vault files to version control
+
+# SSH credentials
+ssh_credentials:
+  default_user: ansible
+  default_password: "change_this_password"
+  default_private_key_path: "~/.ssh/id_rsa"
+
+# AWS credentials
+aws_credentials:
+  access_key: "AKIAEXAMPLE123456789"
+  secret_key: "change_this_to_your_aws_secret_key"
+  region: "us-west-2"
+
+# Azure credentials
+azure_credentials:
+  subscription_id: "00000000-0000-0000-0000-000000000000"
+  client_id: "00000000-0000-0000-0000-000000000000"
+  client_secret: "change_this_to_your_azure_client_secret"
+  tenant_id: "00000000-0000-0000-0000-000000000000"
+
+# Google Cloud credentials
+gcp_credentials:
+  project_id: "your-project-id"
+  credentials_file: "~/.gcp/credentials.json"
+
+# Proxmox credentials
+proxmox_credentials:
+  api_url: "https://proxmox.example.com:8006/api2/json"
+  user: "terraform@pve"
+  password: "change_this_password"
+
+# Database credentials
+database_credentials:
+  postgres:
+    host: "db.example.com"
+    port: 5432
+    username: "db_admin"
+    password: "change_this_password"
+    database: "app_db"
+  mysql:
+    host: "mysql.example.com"
+    port: 3306
+    username: "root"
+    password: "change_this_password"
+    database: "app_db"
+
+# Domain and DNS credentials
+dns_credentials:
+  cloudflare:
+    email: "admin@example.com"
+    api_key: "change_this_to_your_cloudflare_api_key"
+    zone_id: "your_zone_id"
+
+# VPN credentials
+vpn_credentials:
+  openvpn:
+    ca_password: "change_this_password"
+    server_key_password: "change_this_password"
+  wireguard:
+    private_key: "change_this_to_your_wireguard_private_key"
+    public_key: "change_this_to_your_wireguard_public_key"
+
+# Monitoring credentials
+monitoring_credentials:
+  grafana:
+    admin_user: "admin"
+    admin_password: "change_this_password"
+  prometheus:
+    basic_auth_user: "prometheus"
+    basic_password: "change_this_password"
+
+# Vault credentials
+vault_credentials:
+  addr: "https://vault.example.com:8200"
+  token: "change_this_to_your_vault_token"
+  unseal_keys:
+    - "change_this_to_your_vault_unseal_key_1"
+    - "change_this_to_your_vault_unseal_key_2"
+    - "change_this_to_your_vault_unseal_key_3" 

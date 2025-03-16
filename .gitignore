@@ -1,0 +1,81 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Discovery output files
+ansible/inventory/generated_hosts.yml
+discovery/output/*.json
+discovery/output/*.yml
+discovery/output/*.yaml
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+*.tfplan
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ansible
+*.retry
+
+# Vault
+.vault-token
+vault/data/
+*.vault.yml
+*.vault.yaml
+vault/config/vault.hcl
+
+# Credentials and secrets (extra safety)
+*.pem
+*.key
+*.crt
+*.pub
+*.password
+*.secret
+secrets/
+.env
+.env.*
+
+# Logs
+logs/
+*.log
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.settings/
+.classpath
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+.temp/ 

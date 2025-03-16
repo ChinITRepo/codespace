@@ -1,0 +1,30 @@
+#!/bin/sh
+# This is a universal setup script that works on both Unix/Linux/macOS and Windows
+# How it works: The script detects the platform and executes the appropriate code
+# On Unix/Linux/macOS: The PowerShell code is ignored (treated as comments)
+# On Windows: The PowerShell interpreter ignores the shell script part
+
+# Shell script for Unix/Linux/macOS
+if [ "$(uname)" != "unknown" ]; then  # This will be true on Unix/Linux/macOS
+  echo "Detected Unix-like system, running Bash setup..."
+  
+  # Execute the actual Bash script
+  exec ./setup.sh "$@"
+  
+  # Exit is necessary to prevent PowerShell code from being executed as shell
+  exit $?
+fi
+
+# If we're still here, we're on Windows and the above was ignored
+# The following is PowerShell code that will be executed on Windows
+<#
+:: This block is needed to hand off to PowerShell on Windows
+@echo off
+setlocal
+set ARGS=%*
+powershell -NoProfile -ExecutionPolicy Bypass -Command "& { . '%~dpn0.ps1' %ARGS% }"
+exit /b %errorlevel%
+#>
+
+# PowerShell will ignore this line and execute the PowerShell script
+& (Join-Path -Path $PSScriptRoot -ChildPath "setup.ps1") @args 

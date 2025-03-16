@@ -1,0 +1,58 @@
+/**
+ * Infrastructure Automation Framework - HashiCorp Vault Configuration
+ * 
+ * This is an example configuration file for HashiCorp Vault.
+ * Copy this file to vault.hcl and modify it according to your environment.
+ */
+
+storage "file" {
+  path = "./data"
+}
+
+# For production, use more robust storage backends like:
+# storage "consul" {
+#   address = "127.0.0.1:8500"
+#   path    = "vault"
+# }
+
+# Or:
+# storage "postgresql" {
+#   connection_url = "postgres://user:password@localhost:5432/vault?sslmode=disable"
+# }
+
+listener "tcp" {
+  address     = "0.0.0.0:8200"
+  tls_disable = 1  # Enable TLS in production environments
+  
+  # For production, configure TLS:
+  # tls_cert_file = "/path/to/fullchain.pem"
+  # tls_key_file  = "/path/to/privkey.pem"
+}
+
+# API interface and CLI configuration
+api_addr = "http://127.0.0.1:8200"
+ui = true
+
+# Audit logging for security
+# audit {
+#   type = "file"
+#   options = {
+#     file_path = "/var/log/vault/audit.log"
+#   }
+# }
+
+# Enable telemetry for monitoring and metrics
+# telemetry {
+#   dogstatsd_addr = "127.0.0.1:8125"
+#   disable_hostname = true
+# }
+
+# Seal configuration - for production, use HSM or cloud KMS
+# seal "awskms" {
+#   region     = "us-west-2"
+#   kms_key_id = "alias/vault-kms-key"
+# }
+
+# Cluster configuration for high availability
+# cluster_addr = "https://127.0.0.1:8201"
+# cluster_name = "infra-automation-vault" 
