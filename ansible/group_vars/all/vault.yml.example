@@ -76,7 +76,7 @@ monitoring_credentials:
     admin_password: "change_this_password"
   prometheus:
     basic_auth_user: "prometheus"
-    basic_password: "change_this_password"
+    basic_auth_password: "change_this_password"
 
 # Vault credentials
 vault_credentials:
